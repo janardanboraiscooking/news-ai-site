@@ -1,11 +1,11 @@
 /**
  * THE METALLIC STANDARD — Article Summarizer
- * Pre-written summaries with editorial AI-loading experience.
+ * Handles pre-written summaries for original articles and API summaries for 100 generated articles.
  */
 (function () {
   'use strict';
 
-  var summaries = {
+  var preWrittenSummaries = {
     'gpt5': [
       'OpenAI and Anthropic have released GPT-5 and Claude 4, with GPT-5 scoring 94% on the MMLU-Pro benchmark — surpassing expert human performance for the first time using over 10 trillion parameters.',
       'Both models demonstrate emergent capabilities including genuine multi-step planning, self-correction, and reasoning chain revision — a qualitative leap that has shifted the AGI debate from "if" to "when."',
@@ -101,166 +101,127 @@
     'opinion-microsoft.html': 'microsoft-opinion'
   };
 
-  function getSummaryKey() {
+  function getFilename() {
     var path = window.location.pathname;
-    var filename = path.substring(path.lastIndexOf('/') + 1);
+    return path.substring(path.lastIndexOf('/') + 1);
+  }
+
+  function getPreWrittenKey() {
+    var filename = getFilename();
     if (fileMap[filename]) return fileMap[filename];
-    if (!filename.endsWith('.html')) {
-      return fileMap[filename + '.html'] || null;
-    }
     return null;
   }
 
-  function simulateTyping(element, callback) {
-    var cursor = document.createElement('span');
-    cursor.className = 'ai-typing-cursor';
-    cursor.textContent = '▮';
-    element.appendChild(cursor);
-
-    var chars = 'Analyzing article content';
-    var i = 0;
-    var charInterval = setInterval(function () {
-      if (i < chars.length) {
-        cursor.before(document.createTextNode(chars.charAt(i)));
-        i++;
-      } else {
-        clearInterval(charInterval);
-        cursor.remove();
-        setTimeout(callback, 400);
-      }
-    }, 28);
+  function getArticleText() {
+    var body = document.querySelector('.article__body');
+    if (!body) return '';
+    return body.innerText || body.textContent || '';
   }
 
-  function createSummarizerUI() {
-    var article = document.querySelector('article');
-    if (!article) return;
-
-    var wrapper = document.createElement('div');
-    wrapper.className = 'summarizer-wrap';
-    wrapper.innerHTML =
-      '<button class="summarize-btn" id="summarizeBtn">' +
-        '<div class="summarize-btn__left">' +
-          '<div class="summarize-btn__plate">' +
-            '<svg class="summarize-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">' +
-              '<path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>' +
-            '</svg>' +
-            '<svg class="summarize-spinner" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">' +
-              '<path d="M12 2a10 10 0 0 1 10 10"/>' +
-            '</svg>' +
-          '</div>' +
-          '<div class="summarize-btn__label">' +
-            '<span class="summarize-btn__label-main">Summarize with AI</span>' +
-            '<span class="summarize-btn__label-sub">DeepSeek V4 · 3-bullet brief</span>' +
-          '</div>' +
-        '</div>' +
-        '<svg class="summarize-btn__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">' +
-          '<path d="M6 9l6 6 6-6"/>' +
-        '</svg>' +
-      '</button>' +
-      '<div class="summarizer-output" id="summarizerOutput">' +
-        '<div class="summarizer-output__inner">' +
-          '<div class="summarizer-header">' +
-            '<span class="summarizer-header__num">Nº 01</span>' +
-            '<span>AI Brief</span>' +
-            '<span class="summarizer-header__sep"></span>' +
-            '<span class="summarizer-badge">DEEPSEEK V4</span>' +
-          '</div>' +
-          '<div class="summarizer-loading" id="summarizerLoading" style="display:none;">' +
-            '<div class="summarizer-dots"><span></span><span></span><span></span></div>' +
-            '<span class="loading-text" id="loadingText">Initializing model...</span>' +
-          '</div>' +
-          '<div class="summarizer-bullets" id="summarizerBullets"></div>' +
-        '</div>' +
+  function renderBullets(container, lines) {
+    var html = '';
+    lines.forEach(function (line, i) {
+      html += '<div class="summarizer-bullet" style="animation-delay:' + (i * 0.18) + 's">' +
+        '<span class="bullet-marker">' + String(i + 1).padStart(2, '0') + '</span>' +
+        '<span class="bullet-text">' + line + '</span>' +
       '</div>';
-
-    article.parentNode.insertBefore(wrapper, article);
+    });
+    container.innerHTML = html;
+    container.classList.add('visible');
   }
 
-  function bindEvents() {
-    var btn = document.getElementById('summarizeBtn');
-    var output = document.getElementById('summarizerOutput');
-    var loading = document.getElementById('summarizerLoading');
-    var loadingText = document.getElementById('loadingText');
-    var bullets = document.getElementById('summarizerBullets');
+  function showLoading(btn, outputEl, loadingEl, bulletsEl) {
+    btn.classList.add('active');
+    outputEl.classList.add('visible');
+    loadingEl.style.display = 'flex';
+    bulletsEl.innerHTML = '';
+    bulletsEl.classList.remove('visible');
+  }
 
-    if (!btn) return;
+  function hideLoading(loadingEl) {
+    loadingEl.style.display = 'none';
+  }
+
+  function bindSummarizerBtn(btn) {
+    var index = btn.getAttribute('data-article-index');
+    var outputEl = document.getElementById('summary-output-' + index);
+    var loadingEl = document.getElementById('summary-loading-' + index);
+    var bulletsEl = document.getElementById('summary-bullets-' + index);
+
+    if (!outputEl || !loadingEl || !bulletsEl) return;
 
     btn.addEventListener('click', function () {
       if (btn.classList.contains('active')) {
-        output.classList.remove('visible');
+        outputEl.classList.remove('visible');
         btn.classList.remove('active');
-        btn.disabled = false;
         return;
       }
 
-      var key = getSummaryKey();
-      if (!key || !summaries[key]) return;
+      showLoading(btn, outputEl, loadingEl, bulletsEl);
 
-      btn.classList.add('active');
-      btn.disabled = true;
-      output.classList.add('visible');
-      loading.style.display = 'flex';
-      bullets.innerHTML = '';
-      bullets.classList.remove('visible');
+      var preKey = getPreWrittenKey();
+      if (preKey && preWrittenSummaries[preKey]) {
+        setTimeout(function () {
+          hideLoading(loadingEl);
+          renderBullets(bulletsEl, preWrittenSummaries[preKey]);
+        }, 1500);
+        return;
+      }
 
-      loadingText.textContent = 'Loading DeepSeek V4 Flash';
+      var articleText = getArticleText();
+      if (!articleText || articleText.length < 50) {
+        hideLoading(loadingEl);
+        bulletsEl.innerHTML = '<div class="summarizer-bullet"><span class="bullet-text">No article content found to summarize.</span></div>';
+        bulletsEl.classList.add('visible');
+        return;
+      }
 
-      setTimeout(function () { loadingText.textContent = 'Tokenizing article content'; }, 800);
-      setTimeout(function () { loadingText.textContent = 'Generating summary'; }, 1800);
-      setTimeout(function () { loadingText.textContent = 'Finalizing response'; }, 3200);
+      var loadingMessages = [
+        'Loading DeepSeek V4 Flash',
+        'Tokenizing article content',
+        'Generating summary',
+        'Finalizing response'
+      ];
+      var msgIdx = 0;
+      var msgInterval = setInterval(function () {
+        msgIdx++;
+        if (msgIdx < loadingMessages.length) {
+          var textEl = loadingEl.querySelector('.loading-text');
+          if (textEl) textEl.textContent = loadingMessages[msgIdx];
+        }
+      }, 800);
 
-      setTimeout(function () {
-        simulateTyping(loadingText, function () {
-          loading.style.display = 'none';
-
-          var lines = summaries[key];
-          var html = '';
-          lines.forEach(function (line, i) {
-            html += '<div class="summarizer-bullet" style="animation-delay:' + (i * 0.18) + 's">' +
-              '<span class="bullet-marker">' + String(i + 1).padStart(2, '0') + '</span>' +
-              '<span class="bullet-text">' + line + '</span>' +
-            '</div>';
-          });
-          bullets.innerHTML = html;
-          bullets.classList.add('visible');
-          btn.disabled = false;
+      fetch('/api/summarize', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ articleText: articleText })
+      })
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+          clearInterval(msgInterval);
+          hideLoading(loadingEl);
+          if (data.summary) {
+            var lines = data.summary.split('\n').filter(function (l) { return l.trim().length > 0; });
+            if (lines.length === 0) lines = [data.summary];
+            renderBullets(bulletsEl, lines);
+          } else if (data.error) {
+            bulletsEl.innerHTML = '<div class="summarizer-bullet"><span class="bullet-text">' + data.error + '</span></div>';
+            bulletsEl.classList.add('visible');
+          }
+        })
+        .catch(function () {
+          clearInterval(msgInterval);
+          hideLoading(loadingEl);
+          bulletsEl.innerHTML = '<div class="summarizer-bullet"><span class="bullet-text">Service temporarily unavailable. Please try again.</span></div>';
+          bulletsEl.classList.add('visible');
         });
-      }, 3800);
     });
   }
 
-  // Inject modal CSS for subscribe (kept scoped to summarizer for separation)
-  function injectModalCSS() {
-    if (document.getElementById('modal-styles')) return;
-    var s = document.createElement('style');
-    s.id = 'modal-styles';
-    s.textContent = '' +
-      '#subscribe-modal{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s;}' +
-      '#subscribe-modal.visible{opacity:1;}' +
-      '.modal-backdrop{position:absolute;inset:0;background:rgba(10,9,8,0.85);backdrop-filter:blur(8px);}' +
-      '.modal-box{position:relative;background:var(--surface);border:1px solid var(--hairline-bright);padding:48px;max-width:480px;width:calc(100% - 32px);position:relative;}' +
-      '.modal-box::before,.modal-box::after{content:"";position:absolute;width:18px;height:18px;border-color:var(--copper);}' +
-      '.modal-box::before{top:-1px;left:-1px;border-top:1px solid;border-left:1px solid;}' +
-      '.modal-box::after{bottom:-1px;right:-1px;border-bottom:1px solid;border-right:1px solid;}' +
-      '.modal-close{position:absolute;top:16px;right:16px;width:28px;height:28px;background:transparent;border:1px solid var(--hairline);color:var(--text-2);font-size:14px;display:flex;align-items:center;justify-content:center;transition:border-color 0.3s,color 0.3s;}' +
-      '.modal-close:hover{border-color:var(--copper);color:var(--copper);}' +
-      '.modal-plate{font-family:var(--font-mono);font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--copper);margin-bottom:20px;display:flex;align-items:center;gap:12px;}' +
-      '.modal-plate::after{content:"";flex:1;height:1px;background:var(--hairline-bright);}' +
-      '.modal-title{font-family:var(--font-display);font-weight:500;font-variation-settings:"opsz" 144,"SOFT" 50,"WONK" 1;font-size:40px;letter-spacing:-0.025em;line-height:1;color:var(--text-on-paper);margin-bottom:12px;}' +
-      '.modal-title span{color:var(--copper);font-style:italic;}' +
-      '.modal-deck{font-size:14px;line-height:1.6;color:var(--text-2);margin-bottom:28px;font-weight:300;}' +
-      '.modal-form{display:flex;gap:8px;margin-bottom:16px;}' +
-      '.modal-form input{flex:1;background:var(--ink);border:1px solid var(--hairline);padding:12px 14px;font-size:14px;color:var(--text-on-paper);font-family:var(--font-body);outline:none;}' +
-      '.modal-form input:focus{border-color:var(--copper);}' +
-      '.modal-form button{background:var(--copper);color:var(--ink);border:none;padding:12px 20px;font-family:var(--font-mono);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;font-weight:600;cursor:pointer;transition:background 0.3s;}' +
-      '.modal-form button:hover{background:var(--brass);}' +
-      '.modal-foot{font-family:var(--font-mono);font-size:9.5px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-3);}';
-    document.head.appendChild(s);
-  }
-
   document.addEventListener('DOMContentLoaded', function () {
-    injectModalCSS();
-    createSummarizerUI();
-    bindEvents();
+    var buttons = document.querySelectorAll('.summarize-btn');
+    buttons.forEach(function (btn) {
+      bindSummarizerBtn(btn);
+    });
   });
 })();

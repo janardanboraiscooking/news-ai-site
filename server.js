@@ -112,8 +112,12 @@ app.post('/api/summarize', async (req, res) => {
   res.status(503).json({ error: 'AI service is temporarily busy. Please try again in a moment.' });
 });
 
-// ─── CATCH-ALL: SERVE INDEX ──────────────────────────────────
+// ─── CATCH-ALL: SERVE INDEX FOR HTML ROUTES ─────────────────
 app.get('*', (req, res) => {
+  const filePath = path.join(__dirname, req.path);
+  if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
+    return res.sendFile(filePath);
+  }
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
