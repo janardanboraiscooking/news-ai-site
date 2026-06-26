@@ -4,11 +4,22 @@
     {
       "src": "server.js",
       "use": "@vercel/node"
+    },
+    {
+      "src": "**/*",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
+      "dest": "server.js"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
       "dest": "server.js"
     }
   ]
