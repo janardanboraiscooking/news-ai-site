@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en" style="color-scheme: dark light;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Metallic Standard — Intelligence for the 2026 Standard</title>
+  <meta name="description" content="The Metallic Standard. A daily brief on AI, technology, and policy. Sharp analysis. No fluff.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="design.css">
+  <link rel="stylesheet" href="animations.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8916809584235685" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- BACKGROUND LAYERS -->
+  <div class="bg-plate" aria-hidden="true"></div>
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
+  </div>
+  <div class="bg-etched" aria-hidden="true">
+    <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.04">
+        <line x1="0" y1="120" x2="1440" y2="120"/>
+        <line x1="0" y1="240" x2="1440" y2="240"/>
+        <line x1="0" y1="780" x2="1440" y2="780"/>
+        <line x1="0" y1="660" x2="1440" y2="660"/>
+        <line x1="180" y1="0" x2="180" y2="900"/>
+        <line x1="1260" y1="0" x2="1260" y2="900"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- PROGRESS -->
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+  <!-- TICKER TAPE -->
+  <div class="masthead-tape" aria-hidden="true">
+    <div class="masthead-tape__inner">
+      <span class="dot">◆</span><span>Edition Nº 042</span><span class="dot">◆</span><span>Tuesday · 30 May 2026</span><span class="dot">◆</span><span>AI agents displace 38% of mid-management</span><span class="dot">◆</span><span>GPT-5 surpasses expert benchmark</span><span class="dot">◆</span><span>EU antitrust task force convenes</span><span class="dot">◆</span><span>Quantum at 1,121 qubits</span><span class="dot">◆</span><span>Llama 4 hits 2.3M downloads</span><span class="dot">◆</span>
+      <span class="dot">◆</span><span>Edition Nº 042</span><span class="dot">◆</span><span>Tuesday · 30 May 2026</span><span class="dot">◆</span><span>AI agents displace 38% of mid-management</span><span class="dot">◆</span><span>GPT-5 surpasses expert benchmark</span><span class="dot">◆</span><span>EU antitrust task force convenes</span><span class="dot">◆</span><span>Quantum at 1,121 qubits</span><span class="dot">◆</span><span>Llama 4 hits 2.3M downloads</span><span class="dot">◆</span>
+    </div>
+  </div>
+
+  <!-- MASTHEAD / NAV -->
+  <header class="masthead">
+    <div class="masthead__inner">
+      <div class="masthead__left">
+        <div class="nav-stamp">
+          <span class="nav-stamp__plate">Nº 042</span>
+          <span>Tue · 30 May 2026</span>
+        </div>
+      </div>
+      <a href="index.html" class="logo-block" data-cursor="hover">
+        <div class="logo-block__mark">The Metallic <span class="ampersand">Standard</span></div>
+        <div class="logo-block__sub">Established · MMXXVI</div>
+      </a>
+      <div class="masthead__right">
+        <nav class="nav-meta" aria-label="Primary">
+          <a href="index.html" class="nav-link" aria-current="page">Index</a>
+          <a href="tech.html" class="nav-link">Tech</a>
+          <a href="ai.html" class="nav-link">AI</a>
+          <a href="policy.html" class="nav-link">Policy</a>
+          <a href="opinion.html" class="nav-link">Opinion</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+        <button class="theme-toggle" id="themeToggle" aria-label="Switch theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+        <a href="#" class="subscribe-cta magnetic" id="subscribeBtn">
+          <span>Subscribe</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- TOP AD -->
+  <div class="top-banner">
+    <div class="ad-container ad-leaderboard" data-reveal="fade-up" data-delay="1">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8916809584235685" data-ad-slot="5226798173" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="home-hero">
+
+    <div class="hero-masthead">
+      <div class="hero-edition-line" data-reveal="fade-up" data-delay="1">
+        <span class="hero-edition-line__rule"></span>
+        <span>Edition Nº 042 · Volume I</span>
+        <span class="hero-edition-line__rule"></span>
+      </div>
+      <h1 class="hero-title" data-reveal="blur-in" data-delay="2">
+        <span class="word">The</span> <span class="word">Metallic</span> <span class="word ampersand">&amp;</span> <span class="word italic-display">Standard</span>
+      </h1>
+      <div class="hero-sub" data-reveal="fade-up" data-delay="3">
+        <span>Daily Intelligence</span>
+        <span class="hero-sub__sep">◆</span>
+        <span>Tech · AI · Policy</span>
+        <span class="hero-sub__sep">◆</span>
+        <span>Established 2026</span>
+      </div>
+    </div>
+
+    <div class="hero-lead" data-reveal="fade-up" data-delay="2">
+      <a href="ai-articles/ai-agents.html" class="hero-lead__visual tilt-card ripple-host" data-cursor="hover">
+        <div class="hero-lead__visual-tag">AI · Investigation</div>
+        <div class="hero-lead__visual-rule">Plate I</div>
+        <div class="tilt-card__inner" style="position:absolute;inset:0;">
+          <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" style="color:var(--copper);">
+            <circle cx="200" cy="150" r="120" stroke-width="0.8" opacity="0.4"/>
+            <circle cx="200" cy="150" r="90" stroke-width="0.8" opacity="0.5"/>
+            <circle cx="200" cy="150" r="60" stroke-width="0.8" opacity="0.6"/>
+            <circle cx="200" cy="150" r="30" stroke-width="1" opacity="0.8"/>
+            <circle cx="200" cy="150" r="6" fill="currentColor" opacity="0.9" stroke="none"/>
+            <g opacity="0.6">
+              <circle cx="80" cy="150" r="4" fill="currentColor" stroke="none"/>
+              <circle cx="320" cy="150" r="4" fill="currentColor" stroke="none"/>
+              <circle cx="200" cy="30" r="4" fill="currentColor" stroke="none"/>
+              <circle cx="200" cy="270" r="4" fill="currentColor" stroke="none"/>
+              <line x1="80" y1="150" x2="200" y2="150" stroke-width="0.6"/>
+              <line x1="320" y1="150" x2="200" y2="150" stroke-width="0.6"/>
+              <line x1="200" y1="30" x2="200" y2="150" stroke-width="0.6"/>
+              <line x1="200" y1="270" x2="200" y2="150" stroke-width="0.6"/>
+            </g>
+            <g opacity="0.4" stroke-dasharray="2 4">
+              <circle cx="200" cy="150" r="140" stroke-width="0.5"/>
+            </g>
+            <g font-family="JetBrains Mono" font-size="8" fill="currentColor" stroke="none" opacity="0.5">
+              <text x="200" y="155" text-anchor="middle">AGENT-01</text>
+            </g>
+          </svg>
+        </div>
+      </a>
+      <div class="hero-lead__body">
+        <div class="hero-lead__kicker">Lead Story · 7 min read</div>
+        <h2 class="hero-lead__title"><a href="ai-articles/ai-agents.html">How AI Agents Are Quietly Taking Over Your Job</a></h2>
+        <p class="hero-lead__deck">Inside the 2026 agent revolution — the swarms running entire departments, the secret economy, and your survival blueprint before the window closes.</p>
+        <div class="hero-lead__byline">
+          <span><strong>By Alex Mercer</strong></span>
+          <span class="dot">◆</span>
+          <span>May 30, 2026</span>
+          <span class="dot">◆</span>
+          <span>AI · Investigations</span>
+        </div>
+        <a href="ai-articles/ai-agents.html" class="hero-lead__cta">
+          <span>Read the investigation</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: LATEST STORIES -->
+  <header class="section-head" data-plate="Nº 02 · LATEST">
+    <h2 class="section-head__title">Latest Dispatches</h2>
+    <div class="section-head__sub">Updated 09:42 UTC</div>
+  </header>
+
+  <div class="story-grid story-grid--3col" data-stagger>
+
+    <a href="ai-articles/article-autonomous.html" class="story-card" data-stagger-child data-cursor="hover">
+      <div class="story-card__plate ripple-host">
+        <span class="story-card__plate-num">Nº 03</span>
+        <span class="story-card__plate-cat">AI</span>
+        <div class="story-card__plate-corners"></div>
+        <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" style="color:var(--copper);">
+          <circle cx="100" cy="100" r="50" stroke-width="0.8" opacity="0.5"/>
+          <circle cx="60" cy="100" r="20" stroke-width="0.8" opacity="0.7" fill="currentColor" fill-opacity="0.05"/>
+          <circle cx="140" cy="100" r="20" stroke-width="0.8" opacity="0.7" fill="currentColor" fill-opacity="0.05"/>
+          <circle cx="100" cy="60" r="20" stroke-width="0.8" opacity="0.7" fill="currentColor" fill-opacity="0.05"/>
+          <circle cx="100" cy="140" r="20" stroke-width="0.8" opacity="0.7" fill="currentColor" fill-opacity="0.05"/>
+          <line x1="60" y1="100" x2="100" y2="60" stroke-width="0.5" opacity="0.5"/>
+          <line x1="100" y1="60" x2="140" y2="100" stroke-width="0.5" opacity="0.5"/>
+          <line x1="140" y1="100" x2="100" y2="140" stroke-width="0.5" opacity="0.5"/>
+          <line x1="100" y1="140" x2="60" y2="100" stroke-width="0.5" opacity="0.5"/>
+          <line x1="60" y1="100" x2="140" y2="100" stroke-width="0.5" opacity="0.5" stroke-dasharray="2 2"/>
+          <line x1="100" y1="60" x2="100" y2="140" stroke-width="0.5" opacity="0.5" stroke-dasharray="2 2"/>
+          <circle cx="60" cy="100" r="3" fill="currentColor" stroke="none"/>
+          <circle cx="140" cy="100" r="3" fill="currentColor" stroke="none"/>
+          <circle cx="100" cy="60" r="3" fill="currentColor" stroke="none"/>
+          <circle cx="100" cy="140" r="3" fill="currentColor" stroke="none"/>
+        </svg>
+      </div>
+      <div class="story-card__body">
+        <div class="story-card__meta">
+          <span>May 28</span>
+          <span class="dot">◆</span>
+          <span>5 min</span>
+        </div>
+        <h3 class="story-card__title">The Rise of Autonomous Systems in 2026</h3>
+        <p class="story-card__excerpt">From self-healing networks to generative design, AI is reshaping every sector of technology.</p>
+        <span class="story-card__read">
+          <span>Read</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
+      </div>
+    </a>
+
+    <a href="tech-articles/article-quantum.html" class="story-card" data-stagger-child data-cursor="hover">
+      <div class="story-card__plate ripple-host">
+        <span class="story-card__plate-num">Nº 04</span>
+        <span class="story-card__plate-cat">Hardware</span>
+        <div class="story-card__plate-corners"></div>
+        <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" style="color:var(--copper);">
+          <g opacity="0.6">
+            <line x1="40" y1="40" x2="160" y2="40" stroke-width="0.5"/>
+            <line x1="40" y1="80" x2="160" y2="80" stroke-width="0.5"/>
+            <line x1="40" y1="120" x2="160" y2="120" stroke-width="0.5"/>
+            <line x1="40" y1="160" x2="160" y2="160" stroke-width="0.5"/>
+            <line x1="40" y1="40" x2="40" y2="160" stroke-width="0.5"/>
+            <line x1="80" y1="40" x2="80" y2="160" stroke-width="0.5"/>
+            <line x1="120" y1="40" x2="120" y2="160" stroke-width="0.5"/>
+            <line x1="160" y1="40" x2="160" y2="160" stroke-width="0.5"/>
+          </g>
+          <g>
+            <circle cx="40" cy="40" r="6" fill="currentColor" stroke="none" opacity="0.8"/>
+            <circle cx="80" cy="80" r="6" fill="currentColor" stroke="none" opacity="0.8"/>
+            <circle cx="120" cy="40" r="6" fill="currentColor" stroke="none" opacity="0.8"/>
+            <circle cx="160" cy="120" r="6" fill="currentColor" stroke="none" opacity="0.8"/>
+            <circle cx="80" cy="160" r="6" fill="currentColor" stroke="none" opacity="0.8"/>
+            <circle cx="120" cy="120" r="6" fill="currentColor" stroke="none" opacity="0.8"/>
+            <circle cx="40" cy="120" r="6" fill="currentColor" stroke="none" opacity="0.8"/>
+          </g>
+          <g opacity="0.7">
+            <line x1="40" y1="40" x2="80" y2="80" stroke-width="0.6"/>
+            <line x1="80" y1="80" x2="120" y2="40" stroke-width="0.6"/>
+            <line x1="80" y1="80" x2="160" y2="120" stroke-width="0.6"/>
+            <line x1="80" y1="80" x2="80" y2="160" stroke-width="0.6"/>
+            <line x1="80" y1="80" x2="120" y2="120" stroke-width="0.6"/>
+            <line x1="40" y1="120" x2="80" y2="80" stroke-width="0.6"/>
+          </g>
+        </svg>
+      </div>
+      <div class="story-card__body">
+        <div class="story-card__meta">
+          <span>May 25</span>
+          <span class="dot">◆</span>
+          <span>4 min</span>
+        </div>
+        <h3 class="story-card__title">Quantum Computing Hits Enterprise Scale</h3>
+        <p class="story-card__excerpt">IBM and Google announce 1,000+ qubit processors ready for commercial workloads.</p>
+        <span class="story-card__read">
+          <span>Read</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
+      </div>
+    </a>
+
+    <a href="ai-articles/article-gpt5.html" class="story-card" data-stagger-child data-cursor="hover">
+      <div class="story-card__plate ripple-host">
+        <span class="story-card__plate-num">Nº 05</span>
+        <span class="story-card__plate-cat">LLM</span>
+        <div class="story-card__plate-corners"></div>
+        <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" style="color:var(--copper);">
+          <g opacity="0.5">
+            <line x1="100" y1="30" x2="60" y2="80" stroke-width="0.5"/>
+            <line x1="100" y1="30" x2="140" y2="80" stroke-width="0.5"/>
+            <line x1="100" y1="30" x2="100" y2="80" stroke-width="0.5"/>
+            <line x1="60" y1="80" x2="30" y2="130" stroke-width="0.5"/>
+            <line x1="60" y1="80" x2="90" y2="130" stroke-width="0.5"/>
+            <line x1="60" y1="80" x2="100" y2="80" stroke-width="0.5"/>
+            <line x1="140" y1="80" x2="110" y2="130" stroke-width="0.5"/>
+            <line x1="140" y1="80" x2="170" y2="130" stroke-width="0.5"/>
+            <line x1="140" y1="80" x2="100" y2="80" stroke-width="0.5"/>
+            <line x1="30" y1="130" x2="60" y2="170" stroke-width="0.5"/>
+            <line x1="90" y1="130" x2="60" y2="170" stroke-width="0.5"/>
+            <line x1="90" y1="130" x2="120" y2="170" stroke-width="0.5"/>
+            <line x1="110" y1="130" x2="120" y2="170" stroke-width="0.5"/>
+            <line x1="110" y1="130" x2="160" y2="170" stroke-width="0.5"/>
+            <line x1="170" y1="130" x2="160" y2="170" stroke-width="0.5"/>
+          </g>
+          <g>
+            <circle cx="100" cy="30" r="8" fill="currentColor" stroke="none"/>
+            <circle cx="60" cy="80" r="6" fill="currentColor" fill-opacity="0.6" stroke="none"/>
+            <circle cx="140" cy="80" r="6" fill="currentColor" fill-opacity="0.6" stroke="none"/>
+            <circle cx="100" cy="80" r="5" fill="currentColor" fill-opacity="0.4" stroke="none"/>
+            <circle cx="30" cy="130" r="4" fill="currentColor" fill-opacity="0.5" stroke="none"/>
+            <circle cx="90" cy="130" r="4" fill="currentColor" fill-opacity="0.5" stroke="none"/>
+            <circle cx="110" cy="130" r="4" fill="currentColor" fill-opacity="0.5" stroke="none"/>
+            <circle cx="170" cy="130" r="4" fill="currentColor" fill-opacity="0.5" stroke="none"/>
+            <circle cx="60" cy="170" r="3" fill="currentColor" fill-opacity="0.4" stroke="none"/>
+            <circle cx="120" cy="170" r="3" fill="currentColor" fill-opacity="0.4" stroke="none"/>
+            <circle cx="160" cy="170" r="3" fill="currentColor" fill-opacity="0.4" stroke="none"/>
+          </g>
+        </svg>
+      </div>
+      <div class="story-card__body">
+        <div class="story-card__meta">
+          <span>May 20</span>
+          <span class="dot">◆</span>
+          <span>7 min</span>
+        </div>
+        <h3 class="story-card__title">GPT-5 and Claude 4: The Race to AGI</h3>
+        <p class="story-card__excerpt">Next-generation language models push the boundaries of reasoning and multimodal understanding.</p>
+        <span class="story-card__read">
+          <span>Read</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
+      </div>
+    </a>
+
+    <a href="policy-articles/article-antitrust.html" class="story-card" data-stagger-child data-cursor="hover">
+      <div class="story-card__plate ripple-host">
+        <span class="story-card__plate-num">Nº 06</span>
+        <span class="story-card__plate-cat">Policy</span>
+        <div class="story-card__plate-corners"></div>
+        <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" style="color:var(--copper);">
+          <line x1="100" y1="30" x2="100" y2="170" stroke-width="1.4"/>
+          <line x1="40" y1="50" x2="160" y2="50" stroke-width="1"/>
+          <path d="M40 50 L20 90 L60 90 Z" stroke-width="0.8" fill="currentColor" fill-opacity="0.1"/>
+          <path d="M160 50 L140 90 L180 90 Z" stroke-width="0.8" fill="currentColor" fill-opacity="0.1"/>
+          <line x1="50" y1="50" x2="60" y2="90" stroke-width="0.6" opacity="0.6"/>
+          <line x1="150" y1="50" x2="140" y2="90" stroke-width="0.6" opacity="0.6"/>
+          <rect x="80" y="100" width="40" height="50" stroke-width="0.8" fill="currentColor" fill-opacity="0.05"/>
+          <line x1="80" y1="115" x2="120" y2="115" stroke-width="0.5" opacity="0.5"/>
+          <line x1="80" y1="130" x2="120" y2="130" stroke-width="0.5" opacity="0.5"/>
+          <circle cx="40" cy="90" r="3" fill="currentColor" stroke="none"/>
+          <circle cx="160" cy="90" r="3" fill="currentColor" stroke="none"/>
+        </svg>
+      </div>
+      <div class="story-card__body">
+        <div class="story-card__meta">
+          <span>May 26</span>
+          <span class="dot">◆</span>
+          <span>5 min</span>
+        </div>
+        <h3 class="story-card__title">Big Tech Faces Antitrust Reckoning Over AI Dominance</h3>
+        <p class="story-card__excerpt">Regulators on three continents launch coordinated investigations into AI market concentration.</p>
+        <span class="story-card__read">
+          <span>Read</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
+      </div>
+    </a>
+
+    <a href="ai-articles/article-ai-safety.html" class="story-card" data-stagger-child data-cursor="hover">
+      <div class="story-card__plate ripple-host">
+        <span class="story-card__plate-num">Nº 07</span>
+        <span class="story-card__plate-cat">Regulation</span>
+        <div class="story-card__plate-corners"></div>
+        <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" style="color:var(--copper);">
+          <path d="M100 30 L160 55 L160 110 C160 140 100 170 100 170 C100 170 40 140 40 110 L40 55 Z" stroke-width="1" fill="currentColor" fill-opacity="0.05"/>
+          <path d="M100 30 L160 55 L160 110 C160 140 100 170 100 170 C100 170 40 140 40 110 L40 55 Z" stroke-width="0.6" opacity="0.4" stroke-dasharray="3 3"/>
+          <path d="M75 100 L92 117 L130 80" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="100" cy="100" r="35" stroke-width="0.4" opacity="0.4" stroke-dasharray="2 4"/>
+        </svg>
+      </div>
+      <div class="story-card__body">
+        <div class="story-card__meta">
+          <span>May 18</span>
+          <span class="dot">◆</span>
+          <span>5 min</span>
+        </div>
+        <h3 class="story-card__title">Global AI Safety Framework Takes Shape</h3>
+        <p class="story-card__excerpt">Nations race to establish guardrails as AI capabilities outpace legislative processes.</p>
+        <span class="story-card__read">
+          <span>Read</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
+      </div>
+    </a>
+
+    <a href="opinion-articles/opinion-google.html" class="story-card" data-stagger-child data-cursor="hover">
+      <div class="story-card__plate ripple-host">
+        <span class="story-card__plate-num">Nº 08</span>
+        <span class="story-card__plate-cat">Opinion</span>
+        <div class="story-card__plate-corners"></div>
+        <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" style="color:var(--copper);">
+          <circle cx="100" cy="100" r="60" stroke-width="0.8" opacity="0.4"/>
+          <circle cx="100" cy="100" r="40" stroke-width="0.6" opacity="0.5"/>
+          <path d="M100 60 L115 90 L100 100 L85 90 Z" stroke-width="0.8" fill="currentColor" fill-opacity="0.3"/>
+          <line x1="100" y1="100" x2="100" y2="140" stroke-width="0.8"/>
+          <line x1="100" y1="140" x2="80" y2="160" stroke-width="0.8"/>
+          <line x1="100" y1="140" x2="120" y2="160" stroke-width="0.8"/>
+          <circle cx="100" cy="100" r="2" fill="currentColor" stroke="none"/>
+        </svg>
+      </div>
+      <div class="story-card__body">
+        <div class="story-card__meta">
+          <span>May 29</span>
+          <span class="dot">◆</span>
+          <span>6 min</span>
+        </div>
+        <h3 class="story-card__title">Why Google Believes AI Will Replace Search</h3>
+        <p class="story-card__excerpt">A leaked memo reveals Google's plan to become an answer engine by 2028.</p>
+        <span class="story-card__read">
+          <span>Read</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- BY THE NUMBERS -->
+  <section class="bignum-section" data-reveal="fade-up">
+    <div class="bignum-section__head">
+      <h2 class="bignum-section__title">The Year in<br><em class="italic-display" style="color:var(--copper);">Numbers.</em></h2>
+      <p class="bignum-section__deck">The data that defines the moment — drawn from Q1 2026 reporting across AI labs, regulatory filings, and the major cloud providers.</p>
+    </div>
+    <div class="bignum-grid">
+      <div class="bignum">
+        <div class="bignum__num"><span data-count="38" data-suffix="%">0</span></div>
+        <div class="bignum__label">Mid-Management Replaced by Agents</div>
+        <div class="bignum__src">Source · McKinsey Q1 2026</div>
+      </div>
+      <div class="bignum">
+        <div class="bignum__num"><span data-count="1121">0</span></div>
+        <div class="bignum__label">Qubits on IBM's Condor Processor</div>
+        <div class="bignum__src">Source · IBM Hardware Brief</div>
+      </div>
+      <div class="bignum">
+        <div class="bignum__num"><span data-count="80" data-prefix="$" data-suffix="B">0</span></div>
+        <div class="bignum__label">Microsoft AI Infrastructure Spend</div>
+        <div class="bignum__src">Source · MSFT 10-Q Filing</div>
+      </div>
+      <div class="bignum">
+        <div class="bignum__num"><span data-count="47">0</span></div>
+        <div class="bignum__label">Nations With AI Safety Legislation</div>
+        <div class="bignum__src">Source · OECD Tracker</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECONDARY STORY ROWS -->
+  <header class="section-head" data-plate="Nº 09 · DISPATCHES" data-reveal="fade-up">
+    <h2 class="section-head__title">More from the desk</h2>
+    <div class="section-head__sub">14 stories in the queue</div>
+  </header>
+
+  <div class="story-list">
+
+    <a href="tech-articles/article-data-sovereignty.html" class="story-row" data-reveal="fade-up" data-delay="1">
+      <span class="story-row__num">09</span>
+      <h3 class="story-row__title">Data Sovereignty Laws Reshape Cloud Computing</h3>
+      <span class="story-row__meta">May 15 <span class="dot">◆</span> 4 min <span class="dot">◆</span> Policy</span>
+      <span class="story-row__cta">
+        <span>Read</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
+    </a>
+
+    <a href="opinion-articles/opinion-meta.html" class="story-row" data-reveal="fade-up" data-delay="1">
+      <span class="story-row__num">10</span>
+      <h3 class="story-row__title">Meta's Open Source AI Bet: Visionary or Reckless?</h3>
+      <span class="story-row__meta">May 27 <span class="dot">◆</span> 5 min <span class="dot">◆</span> Opinion</span>
+      <span class="story-row__cta">
+        <span>Read</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
+    </a>
+
+    <a href="policy-articles/article-cybersecurity.html" class="story-row" data-reveal="fade-up" data-delay="1">
+      <span class="story-row__num">11</span>
+      <h3 class="story-row__title">New Cybersecurity Mandates Reshape Enterprise Security</h3>
+      <span class="story-row__meta">May 20 <span class="dot">◆</span> 5 min <span class="dot">◆</span> Cybersecurity</span>
+      <span class="story-row__cta">
+        <span>Read</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
+    </a>
+
+    <a href="opinion-articles/opinion-apple.html" class="story-row" data-reveal="fade-up" data-delay="1">
+      <span class="story-row__num">12</span>
+      <h3 class="story-row__title">Apple's Quiet AI Revolution: The Long Game</h3>
+      <span class="story-row__meta">May 24 <span class="dot">◆</span> 7 min <span class="dot">◆</span> Opinion</span>
+      <span class="story-row__cta">
+        <span>Read</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
+    </a>
+
+    <a href="policy-articles/article-platform-liability.html" class="story-row" data-reveal="fade-up" data-delay="1">
+      <span class="story-row__num">13</span>
+      <h3 class="story-row__title">Platform Liability Reform Forces Tech to Own Its Content</h3>
+      <span class="story-row__meta">May 10 <span class="dot">◆</span> 5 min <span class="dot">◆</span> Policy</span>
+      <span class="story-row__cta">
+        <span>Read</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
+    </a>
+
+    <a href="policy-articles/article-digital-identity.html" class="story-row" data-reveal="fade-up" data-delay="1">
+      <span class="story-row__num">14</span>
+      <h3 class="story-row__title">Digital Identity Laws Transform How You Prove Who You Are</h3>
+      <span class="story-row__meta">May 14 <span class="dot">◆</span> 4 min <span class="dot">◆</span> Digital ID</span>
+      <span class="story-row__cta">
+        <span>Read</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
+    </a>
+
+    <a href="opinion-articles/opinion-microsoft.html" class="story-row" data-reveal="fade-up" data-delay="1">
+      <span class="story-row__num">15</span>
+      <h3 class="story-row__title">Microsoft's AI-First Strategy: The $80 Billion Gamble</h3>
+      <span class="story-row__meta">May 21 <span class="dot">◆</span> 6 min <span class="dot">◆</span> Opinion</span>
+      <span class="story-row__cta">
+        <span>Read</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
+    </a>
+
+    <a href="tech-articles/article-eu-dma.html" class="story-row" data-reveal="fade-up" data-delay="1">
+      <span class="story-row__num">16</span>
+      <h3 class="story-row__title">EU Digital Markets Act Enforcement Begins</h3>
+      <span class="story-row__meta">May 22 <span class="dot">◆</span> 3 min <span class="dot">◆</span> Policy</span>
+      <span class="story-row__cta">
+        <span>Read</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
+    </a>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="site-footer__main">
+      <div class="site-footer__brand">
+        <div class="site-footer__mark">The Metallic <span class="ampersand">Standard</span></div>
+        <div class="site-footer__tagline">Daily Intelligence · Est. 2026</div>
+        <p class="site-footer__desc">A daily brief on artificial intelligence, technology, and the policy shaping both. Sharp analysis from a small desk.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col__title">Sections</div>
+        <ul>
+          <li><a href="index.html" class="link-draw">Index</a></li>
+          <li><a href="tech.html" class="link-draw">Tech</a></li>
+          <li><a href="ai.html" class="link-draw">AI</a></li>
+          <li><a href="policy.html" class="link-draw">Policy</a></li>
+          <li><a href="opinion.html" class="link-draw">Opinion</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col__title">Newsroom</div>
+        <ul>
+          <li><a href="contact.html" class="link-draw">Send a tip</a></li>
+          <li><a href="contact.html" class="link-draw">Contact</a></li>
+          <li><a href="#" class="link-draw">Corrections</a></li>
+          <li><a href="#" class="link-draw">Ethics policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col__title">Legal</div>
+        <ul>
+          <li><a href="privacy.html" class="link-draw">Privacy</a></li>
+          <li><a href="terms.html" class="link-draw">Terms</a></li>
+          <li><a href="#" class="link-draw">Cookies</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__base">
+      <div class="site-footer__base-inner">
+        <span>© 2026 The Metallic Standard</span>
+        <span class="dot">◆</span>
+        <span>Volume I</span>
+        <span class="dot">◆</span>
+        <span>Set in Fraunces &amp; Manrope</span>
+      </div>
+    </div>
+  
+  <section class="story-section" style="max-width:1200px;margin:80px auto;padding:0 32px;">
+    <div class="story-section__head" data-reveal="fade-up">
+      <span class="story-section__label">LATEST FROM THE WIRE</span>
+      <span class="story-section__sep"></span>
+      <span class="story-section__count">100 stories</span>
+    </div>
+    <div class="story-grid" style="margin-top:32px;">
+          <a href="news/patronus-ai-lands-50m-to-build-digital-worlds-that-stress-test-ai-agents.html" class="story-card tilt-host" data-reveal="fade-up" data-delay="1" data-cursor="hover">
+            <div class="story-card__plate">
+              <span class="story-card__plate-cat">Startups</span>
+              <span class="story-card__plate-num">Nº 01</span>
+            </div>
+            <div class="story-card__body">
+              <h3 class="story-card__title">Patronus AI lands $50M Series B to build digital worlds that stress-test AI agents</h3>
+              <div class="story-card__meta">
+                <span>TechCrunch</span>
+                <span class="dot">◆</span>
+                <span>Jun 26</span>
+                <span class="dot">◆</span>
+                <span>3 min</span>
+              </div>
+            </div>
+          </a>
+          <a href="news/anthropic-thinks-its-own-success-is-key-to-making-ai-safe.html" class="story-card tilt-host" data-reveal="fade-up" data-delay="2" data-cursor="hover">
+            <div class="story-card__plate">
+              <span class="story-card__plate-cat">Industry</span>
+              <span class="story-card__plate-num">Nº 02</span>
+            </div>
+            <div class="story-card__body">
+              <h3 class="story-card__title">Anthropic Thinks Its Own Success Is Key to Making AI Safe</h3>
+              <div class="story-card__meta">
+                <span>WIRED</span>
+                <span class="dot">◆</span>
+                <span>Jun 26</span>
+                <span class="dot">◆</span>
+                <span>3 min</span>
+              </div>
+            </div>
+          </a>
+          <a href="news/the-white-house-is-asking-openai-to-slow-roll-the-release-of-its-new-model-over-.html" class="story-card tilt-host" data-reveal="fade-up" data-delay="3" data-cursor="hover">
+            <div class="story-card__plate">
+              <span class="story-card__plate-cat">Regulation</span>
+              <span class="story-card__plate-num">Nº 03</span>
+            </div>
+            <div class="story-card__body">
+              <h3 class="story-card__title">White House asks OpenAI to slow roll release of new model over safety concerns</h3>
+              <div class="story-card__meta">
+                <span>TechCrunch</span>
+                <span class="dot">◆</span>
+                <span>Jun 26</span>
+                <span class="dot">◆</span>
+                <span>3 min</span>
+              </div>
+            </div>
+          </a>
+          <a href="news/world-cup-teams-are-in-a-race-for-ai-dominance.html" class="story-card tilt-host" data-reveal="fade-up" data-delay="4" data-cursor="hover">
+            <div class="story-card__plate">
+              <span class="story-card__plate-cat">Industry</span>
+              <span class="story-card__plate-num">Nº 04</span>
+            </div>
+            <div class="story-card__body">
+              <h3 class="story-card__title">World Cup Teams Are in a Race for AI Dominance</h3>
+              <div class="story-card__meta">
+                <span>WIRED</span>
+                <span class="dot">◆</span>
+                <span>Jun 25</span>
+                <span class="dot">◆</span>
+                <span>3 min</span>
+              </div>
+            </div>
+          </a>
+          <a href="news/amazon-ups-india-bet-with-fresh-13b-ai-infrastructure-investment.html" class="story-card tilt-host" data-reveal="fade-up" data-delay="5" data-cursor="hover">
+            <div class="story-card__plate">
+              <span class="story-card__plate-cat">Industry</span>
+              <span class="story-card__plate-num">Nº 05</span>
+            </div>
+            <div class="story-card__body">
+              <h3 class="story-card__title">Amazon commits fresh $13B to AI infrastructure in India, bringing total pledges to $48B</h3>
+              <div class="story-card__meta">
+                <span>TechCrunch</span>
+                <span class="dot">◆</span>
+                <span>Jun 25</span>
+                <span class="dot">◆</span>
+                <span>3 min</span>
+              </div>
+            </div>
+          </a>
+          <a href="news/congresswoman-denies-staff-used-ai-to-write-defense-funding-amendment.html" class="story-card tilt-host" data-reveal="fade-up" data-delay="6" data-cursor="hover">
+            <div class="story-card__plate">
+              <span class="story-card__plate-cat">Regulation</span>
+              <span class="story-card__plate-num">Nº 06</span>
+            </div>
+            <div class="story-card__body">
+              <h3 class="story-card__title">Congresswoman denies staff used AI to write defense funding amendment</h3>
+              <div class="story-card__meta">
+                <span>The Verge</span>
+                <span class="dot">◆</span>
+                <span>Jun 25</span>
+                <span class="dot">◆</span>
+                <span>3 min</span>
+              </div>
+            </div>
+          </a>
+          <a href="news/were-strengthening-our-presence-in-alabama-through-new-investments-and-community.html" class="story-card tilt-host" data-reveal="fade-up" data-delay="1" data-cursor="hover">
+            <div class="story-card__plate">
+              <span class="story-card__plate-cat">Industry</span>
+              <span class="story-card__plate-num">Nº 07</span>
+            </div>
+            <div class="story-card__body">
+              <h3 class="story-card__title">Google strengthens its Alabama presence through new investments and community support</h3>
+              <div class="story-card__meta">
+                <span>Google AI Blog</span>
+                <span class="dot">◆</span>
+                <span>Jun 15</span>
+                <span class="dot">◆</span>
+                <span>3 min</span>
+              </div>
+            </div>
+          </a>
+          <a href="news/facebook-rolls-out-an-ai-companion-app-for-creators.html" class="story-card tilt-host" data-reveal="fade-up" data-delay="2" data-cursor="hover">
+            <div class="story-card__plate">
+              <span class="story-card__plate-cat">Tools</span>
+              <span class="story-card__plate-num">Nº 08</span>
+            </div>
+            <div class="story-card__body">
+              <h3 class="story-card__title">Facebook rolls out an AI companion app for creators</h3>
+              <div class="story-card__meta">
+                <span>TechCrunch</span>
+                <span class="dot">◆</span>
+                <span>Jun 24</span>
+                <span class="dot">◆</span>
+                <span>3 min</span>
+              </div>
+            </div>
+          </a>
+          <a href="news/anthropics-claude-tag-is-learning-your-company-one-slack-message-at-a-time.html" class="story-card tilt-host" data-reveal="fade-up" data-delay="3" data-cursor="hover">
+            <div class="story-card__plate">
+              <span class="story-card__plate-cat">Tools</span>
+              <span class="story-card__plate-num">Nº 09</span>
+            </div>
+            <div class="story-card__body">
+              <h3 class="story-card__title">Anthropic's Claude Tag learns your company one Slack message at a time</h3>
+              <div class="story-card__meta">
+                <span>TechCrunch</span>
+                <span class="dot">◆</span>
+                <span>Jun 23</span>
+                <span class="dot">◆</span>
+                <span>3 min</span>
+              </div>
+            </div>
+          </a>
+          <a href="news/hollywood-is-bending-the-knee-to-openai.html" class="story-card tilt-host" data-reveal="fade-up" data-delay="4" data-cursor="hover">
+            <div class="story-card__plate">
+              <span class="story-card__plate-cat">Industry</span>
+              <span class="story-card__plate-num">Nº 10</span>
+            </div>
+            <div class="story-card__body">
+              <h3 class="story-card__title">Hollywood is bowing to OpenAI</h3>
+              <div class="story-card__meta">
+                <span>The Verge</span>
+                <span class="dot">◆</span>
+                <span>Jun 24</span>
+                <span class="dot">◆</span>
+                <span>3 min</span>
+              </div>
+            </div>
+          </a>
+          <a href="news/indias-moengage-bets-that-the-future-of-marketing-is-millions-of-ai-agents.html" class="story-card tilt-host" data-reveal="fade-up" data-delay="5" data-cursor="hover">
+            <div class="story-card__plate">
+              <span class="story-card__plate-cat">Startups</span>
+              <span class="story-card__plate-num">Nº 11</span>
+            </div>
+            <div class="story-card__body">
+              <h3 class="story-card__title">India's MoEngage bets the future of marketing is millions of AI agents</h3>
+              <div class="story-card__meta">
+                <span>TechCrunch</span>
+                <span class="dot">◆</span>
+                <span>Jun 24</span>
+                <span class="dot">◆</span>
+                <span>3 min</span>
+              </div>
+            </div>
+          </a>
+          <a href="news/new-research-shows-how-amie-our-medical-ai-could-help-manage-health-conditions.html" class="story-card tilt-host" data-reveal="fade-up" data-delay="6" data-cursor="hover">
+            <div class="story-card__plate">
+              <span class="story-card__plate-cat">Research</span>
+              <span class="story-card__plate-num">Nº 12</span>
+            </div>
+            <div class="story-card__body">
+              <h3 class="story-card__title">New Google research shows how AMIE medical AI could help manage health conditions</h3>
+              <div class="story-card__meta">
+                <span>Google AI Blog</span>
+                <span class="dot">◆</span>
+                <span>Jun 17</span>
+                <span class="dot">◆</span>
+                <span>3 min</span>
+              </div>
+            </div>
+          </a>
+    </div>
+    <div style="text-align:center;margin-top:40px;" data-reveal="fade-up">
+      <a href="ai.html" class="subscribe-cta" style="display:inline-flex;text-decoration:none;font-size:11px;">
+        <span>View All 100 Stories →</span>
+      </a>
+    </div>
+  </section>
+
+</footer>
+
+  <!-- STICKY ANCHOR AD -->
+  <div class="ad-anchor" id="anchorAd">
+    <button class="close-btn" id="closeAnchor">Close</button>
+    <div class="ad-container ad-leaderboard">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8916809584235685" data-ad-slot="5226798173" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </div>
+
+  <script src="animations.js"></script>
+</body>
+</html>

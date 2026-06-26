@@ -1,0 +1,535 @@
+/* ==========================================================================
+   THE METALLIC STANDARD — MOTION SYSTEM
+   Pairs with design.css. Editorial reveal mechanics.
+   ========================================================================== */
+
+/* ─── SCROLL-TRIGGERED REVEAL ─────────────────────────────────────────── */
+[data-reveal] {
+  opacity: 0;
+  transition: opacity 1s var(--ease), transform 1s var(--ease), filter 1s var(--ease), clip-path 1s var(--ease);
+  will-change: transform, opacity, filter;
+}
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translate(0,0) scale(1);
+  filter: blur(0);
+  clip-path: inset(0 0 0 0);
+}
+[data-reveal="fade-up"]   { transform: translateY(60px); }
+[data-reveal="fade-down"] { transform: translateY(-40px); }
+[data-reveal="fade-left"] { transform: translateX(-50px); }
+[data-reveal="fade-right"]{ transform: translateX(50px); }
+[data-reveal="blur-in"]   { transform: translateY(30px); filter: blur(10px); }
+[data-reveal="scale-in"]  { transform: scale(0.9) translateY(20px); }
+[data-reveal="zoom-fade"] { transform: scale(0.85); filter: blur(6px); }
+[data-reveal="clip-up"]   { clip-path: inset(100% 0 0 0); transform: translateY(0); }
+[data-reveal="clip-down"] { clip-path: inset(0 0 100% 0); transform: translateY(0); }
+[data-reveal="clip-left"] { clip-path: inset(0 100% 0 0); transform: translateX(0); }
+[data-reveal="stamp"]     { transform: scale(1.4); filter: blur(8px); }
+
+[data-reveal][data-delay="1"] { transition-delay: 0.05s; }
+[data-reveal][data-delay="2"] { transition-delay: 0.12s; }
+[data-reveal][data-delay="3"] { transition-delay: 0.20s; }
+[data-reveal][data-delay="4"] { transition-delay: 0.30s; }
+[data-reveal][data-delay="5"] { transition-delay: 0.42s; }
+[data-reveal][data-delay="6"] { transition-delay: 0.55s; }
+[data-reveal][data-delay="7"] { transition-delay: 0.70s; }
+[data-reveal][data-delay="8"] { transition-delay: 0.85s; }
+
+/* ─── STAGGER (for groups) ────────────────────────────────────────────── */
+[data-stagger-child] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+[data-stagger-child].stagger-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── TEXT MASK REVEAL ────────────────────────────────────────────────── */
+[data-text-mask] {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+}
+[data-text-mask] > span {
+  display: inline-block;
+  transform: translateY(110%);
+  transition: transform 0.9s var(--ease);
+}
+[data-text-mask].is-visible > span {
+  transform: translateY(0);
+}
+
+/* Word-by-word stagger */
+[data-word-stagger] .word {
+  display: inline-block;
+  transform: translateY(110%);
+  transition: transform 0.7s var(--ease);
+}
+[data-word-stagger].is-visible .word {
+  transform: translateY(0);
+}
+
+/* ─── DRAW-IN RULES (hairlines that grow on scroll) ───────────────────── */
+[data-draw-x] {
+  width: 0; height: 1px;
+  background: var(--copper);
+  transition: width 1.2s var(--ease);
+}
+[data-draw-x].is-visible { width: 100%; }
+
+[data-draw-x-c] {
+  width: 0; height: 1px;
+  background: var(--copper);
+  margin: 0 auto;
+  transition: width 1.2s var(--ease);
+}
+[data-draw-x-c].is-visible { width: 80px; }
+
+/* ─── SECTION DIVIDERS (engraved marks) ──────────────────────────────── */
+.engraved-mark {
+  display: flex; align-items: center; justify-content: center;
+  gap: 16px;
+  padding: 40px 32px;
+  position: relative; z-index: 1;
+  color: var(--text-3);
+}
+.engraved-mark::before, .engraved-mark::after {
+  content: ''; flex: 1; height: 1px; max-width: 200px;
+  background: var(--hairline);
+}
+.engraved-mark__symbol {
+  font-family: var(--font-mono);
+  font-size: 14px; letter-spacing: 0.3em;
+  color: var(--copper);
+}
+
+/* ─── CLICK RIPPLE ────────────────────────────────────────────────────── */
+.ripple-host { position: relative; overflow: hidden; }
+.ripple-flash {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,122,74,0.35) 0%, transparent 70%);
+  pointer-events: none;
+  transform: scale(0);
+  animation: rippleExpand 0.8s var(--ease) forwards;
+}
+@keyframes rippleExpand {
+  0% { transform: scale(0); opacity: 1; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+/* ─── MAGNETIC EFFECT ─────────────────────────────────────────────────── */
+.magnetic { will-change: transform; transition: transform 0.3s var(--ease); }
+
+/* ─── CARD TILT (subtle) ──────────────────────────────────────────────── */
+.tilt-card {
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateX(0) rotateY(0) translateZ(0);
+  transition: transform 0.4s var(--ease);
+  will-change: transform;
+}
+.tilt-card__inner {
+  transform: translateZ(0);
+  transition: transform 0.3s var(--ease);
+}
+
+/* ─── LINK UNDERLINE DRAW ────────────────────────────────────────────── */
+.link-draw {
+  position: relative;
+  display: inline-block;
+}
+.link-draw::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 100%; height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 0.5s var(--ease);
+}
+.link-draw:hover::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+/* ─── SUMMARIZER (replaces summarizer.css in-line) ────────────────────── */
+.summarizer-wrap {
+  margin: 0 0 40px;
+  position: relative;
+  border: 1px solid var(--hairline);
+  background: var(--surface);
+  position: relative;
+}
+.summarizer-wrap::before, .summarizer-wrap::after {
+  content: ''; position: absolute; width: 14px; height: 14px;
+  border-color: var(--copper);
+  pointer-events: none;
+}
+.summarizer-wrap::before { top: -1px; left: -1px; border-top: 1px solid; border-left: 1px solid; }
+.summarizer-wrap::after { bottom: -1px; right: -1px; border-bottom: 1px solid; border-right: 1px solid; }
+
+.summarize-btn {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  width: 100%;
+  padding: 20px 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.3s;
+}
+.summarize-btn:hover { background: var(--ink-2); }
+.summarize-btn__left { display: flex; align-items: center; gap: 16px; }
+.summarize-btn__plate {
+  width: 44px; height: 44px;
+  background: var(--ink);
+  border: 1px solid var(--hairline-bright);
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+.summarize-btn__plate::before, .summarize-btn__plate::after {
+  content: ''; position: absolute; width: 4px; height: 4px;
+  border-color: var(--copper);
+}
+.summarize-btn__plate::before { top: -1px; left: -1px; border-top: 1px solid; border-left: 1px solid; }
+.summarize-btn__plate::after { bottom: -1px; right: -1px; border-bottom: 1px solid; border-right: 1px solid; }
+.summarize-btn__plate svg { width: 22px; height: 22px; color: var(--copper); }
+
+.summarize-btn__label {
+  display: flex; flex-direction: column; gap: 2px;
+  text-align: left;
+}
+.summarize-btn__label-main {
+  font-family: var(--font-mono);
+  font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600;
+  color: var(--text-on-paper);
+}
+.summarize-btn__label-sub {
+  font-family: var(--font-mono);
+  font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--text-3);
+}
+.summarize-btn__chev {
+  width: 16px; height: 16px;
+  color: var(--copper);
+  transition: transform 0.4s var(--ease);
+}
+.summarize-btn.active .summarize-btn__chev { transform: rotate(180deg); }
+.summarize-btn .summarize-spinner { display: none; animation: spin 0.9s linear infinite; }
+.summarize-btn.active .summarize-spinner { display: block; }
+.summarize-btn.active .summarize-btn__plate svg { display: none; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.summarizer-output {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  border-top: 1px solid var(--hairline);
+  transition: max-height 0.6s var(--ease), opacity 0.5s var(--ease);
+}
+.summarizer-output.visible {
+  max-height: 800px;
+  opacity: 1;
+}
+.summarizer-output__inner { padding: 24px 28px 28px; }
+.summarizer-header {
+  display: flex; align-items: center; gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 600;
+  color: var(--copper);
+  padding-bottom: 16px; margin-bottom: 20px;
+  border-bottom: 1px dashed var(--hairline);
+}
+.summarizer-header__num { color: var(--text-3); }
+.summarizer-header__sep { flex: 1; height: 1px; background: var(--hairline-soft); }
+.summarizer-badge {
+  font-size: 9px; letter-spacing: 0.2em;
+  padding: 3px 7px;
+  border: 1px solid var(--hairline-bright);
+  color: var(--text-2);
+}
+.summarizer-loading {
+  display: flex; align-items: center; gap: 16px;
+  padding: 20px 0;
+}
+.summarizer-dots { display: flex; gap: 6px; }
+.summarizer-dots span {
+  width: 6px; height: 6px;
+  background: var(--copper);
+  border-radius: 50%;
+  animation: dotPulse 1.4s ease-in-out infinite;
+}
+.summarizer-dots span:nth-child(2) { animation-delay: 0.18s; }
+.summarizer-dots span:nth-child(3) { animation-delay: 0.36s; }
+@keyframes dotPulse {
+  0%, 80%, 100% { opacity: 0.2; transform: scale(0.7); }
+  40% { opacity: 1; transform: scale(1.1); }
+}
+.loading-text {
+  font-family: var(--font-mono);
+  font-size: 11px; letter-spacing: 0.15em;
+  color: var(--text-2);
+}
+.ai-typing-cursor { color: var(--copper); animation: blink 0.7s step-end infinite; }
+@keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+
+.summarizer-bullets {
+  display: flex; flex-direction: column;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+.summarizer-bullets.visible { opacity: 1; transform: translateY(0); }
+.summarizer-bullet {
+  display: flex; gap: 16px; align-items: flex-start;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--hairline-soft);
+  opacity: 0; transform: translateY(12px);
+  animation: bulletIn 0.6s var(--ease) forwards;
+}
+.summarizer-bullet:last-child { border-bottom: none; }
+@keyframes bulletIn { to { opacity: 1; transform: translateY(0); } }
+.bullet-marker {
+  flex-shrink: 0;
+  width: 28px; height: 28px;
+  background: var(--ink);
+  border: 1px solid var(--hairline-bright);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 11px; font-weight: 600;
+  color: var(--copper);
+  position: relative;
+  margin-top: 2px;
+}
+.bullet-marker::before, .bullet-marker::after {
+  content: ''; position: absolute; width: 4px; height: 4px;
+  border-color: var(--copper);
+}
+.bullet-marker::before { top: -1px; left: -1px; border-top: 1px solid; border-left: 1px solid; }
+.bullet-marker::after { bottom: -1px; right: -1px; border-bottom: 1px solid; border-right: 1px solid; }
+.bullet-text {
+  color: var(--text);
+  font-size: 14.5px;
+  line-height: 1.65;
+  font-weight: 300;
+  flex: 1;
+}
+
+/* ==========================================================================
+   THE METALLIC STANDARD — MOTION GRAPHICS
+   Foundry curtain, SVG line-draw, embers, hammer-strike, plate tilt, glow
+   ========================================================================== */
+
+/* ─── FOUNDRY CURTAIN PRELOADER ─────────────────────────────────────────── */
+.foundry-curtain {
+  position: fixed; inset: 0; z-index: 9999;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  pointer-events: none;
+}
+.foundry-curtain__panel {
+  background: var(--ink, #0a0908);
+  border-right: 1px solid var(--copper, #c87a4a);
+  transform-origin: top;
+  animation: curtainDrop 1.4s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+.foundry-curtain__panel:nth-child(1) { animation-delay: 0.00s; }
+.foundry-curtain__panel:nth-child(2) { animation-delay: 0.08s; }
+.foundry-curtain__panel:nth-child(3) { animation-delay: 0.16s; }
+.foundry-curtain__panel:nth-child(4) { animation-delay: 0.24s; }
+.foundry-curtain__panel:nth-child(5) { animation-delay: 0.32s; border-right: none; }
+.foundry-curtain.is-dismissed { display: none; }
+@keyframes curtainDrop {
+  0%   { transform: scaleY(1); }
+  100% { transform: scaleY(0); }
+}
+.foundry-curtain__seal {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  color: var(--copper, #c87a4a);
+  font-family: var(--font-mono, monospace);
+  font-size: 12px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  animation: sealFade 1.6s ease-out forwards;
+}
+.foundry-curtain__seal::before,
+.foundry-curtain__seal::after {
+  content: ''; width: 36px; height: 1px;
+  background: var(--copper, #c87a4a);
+  opacity: 0.5;
+}
+@keyframes sealFade {
+  0%   { opacity: 0; transform: translate(-50%, -50%) scale(0.92); }
+  20%  { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  70%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* ─── SVG LINE DRAW (engraving effect) ──────────────────────────────────── */
+[data-line-draw] path,
+[data-line-draw] line,
+[data-line-draw] circle,
+[data-line-draw] rect,
+[data-line-draw] polygon,
+[data-line-draw] polyline,
+[data-line-draw] ellipse {
+  stroke-dasharray: var(--len, 1200);
+  stroke-dashoffset: var(--len, 1200);
+  transition: stroke-dashoffset 2.4s cubic-bezier(0.65, 0, 0.35, 1) 0.2s;
+}
+[data-line-draw].is-visible path,
+[data-line-draw].is-visible line,
+[data-line-draw].is-visible circle,
+[data-line-draw].is-visible rect,
+[data-line-draw].is-visible polygon,
+[data-line-draw].is-visible polyline,
+[data-line-draw].is-visible ellipse {
+  stroke-dashoffset: 0;
+}
+[data-line-draw] [data-fill] {
+  fill-opacity: 0;
+  transition: fill-opacity 1.6s ease 1.8s;
+}
+[data-line-draw].is-visible [data-fill] { fill-opacity: 1; }
+
+/* ─── FLOATING EMBERS ──────────────────────────────────────────────────── */
+.embers {
+  position: fixed; inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.embers__spark {
+  position: absolute;
+  bottom: -20px;
+  background: var(--copper, #c87a4a);
+  border-radius: 50%;
+  box-shadow: 0 0 6px var(--copper, #c87a4a), 0 0 14px rgba(200, 122, 74, 0.4);
+  opacity: 0;
+  animation: emberRise var(--duration, 9s) ease-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+@keyframes emberRise {
+  0%   { transform: translate(0, 0) scale(0.4); opacity: 0; }
+  8%   { opacity: 0.9; }
+  35%  { transform: translate(calc(var(--drift, 30px) * 0.6), -35vh) scale(1); opacity: 0.7; }
+  75%  { opacity: 0.4; }
+  100% { transform: translate(var(--drift, -20px), -110vh) scale(0.2); opacity: 0; }
+}
+
+/* ─── HAMMER STRIKE (primary CTAs) ─────────────────────────────────────── */
+.hammer-strike { position: relative; overflow: hidden; isolation: isolate; }
+.hammer-strike::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(115deg,
+    transparent 0%,
+    transparent 35%,
+    rgba(255, 210, 160, 0.55) 50%,
+    transparent 65%,
+    transparent 100%);
+  transform: translateX(-120%);
+  pointer-events: none;
+}
+.hammer-strike.is-struck::after { animation: hammerFlash 0.75s ease-out; }
+@keyframes hammerFlash {
+  0%   { transform: translateX(-120%); }
+  100% { transform: translateX(120%); }
+}
+@keyframes stamp {
+  0%   { transform: scale(1); }
+  35%  { transform: scale(0.95); }
+  60%  { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+.stamping { animation: stamp 0.45s cubic-bezier(0.16, 1, 0.3, 1); }
+
+/* ─── PLATE TILT (3D follow) ───────────────────────────────────────────── */
+.tilt-host {
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+.tilt-host.is-tilting { transition: transform 0.1s linear; }
+
+/* ─── GLOW PULSE ───────────────────────────────────────────────────────── */
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(200, 122, 74, 0); }
+  50%      { box-shadow: 0 0 20px 0 rgba(200, 122, 74, 0.35), 0 0 40px 0 rgba(200, 122, 74, 0.18); }
+}
+.glow-pulse { animation: glowPulse 3.6s ease-in-out infinite; }
+
+@keyframes glowPulseSoft {
+  0%, 100% { text-shadow: 0 0 0 transparent; }
+  50%      { text-shadow: 0 0 16px rgba(200, 122, 74, 0.6); }
+}
+.glow-pulse-soft { animation: glowPulseSoft 4s ease-in-out infinite; }
+
+/* ─── BLUEPRINT GRID ───────────────────────────────────────────────────── */
+.blueprint-grid {
+  position: fixed; inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(200, 122, 74, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200, 122, 74, 0.045) 1px, transparent 1px);
+  background-size: 64px 64px;
+  background-position: 0 0;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+  animation: gridDrift 40s linear infinite;
+  opacity: 0.7;
+}
+@keyframes gridDrift {
+  0%   { background-position: 0 0, 0 0; }
+  100% { background-position: 64px 64px, 64px 64px; }
+}
+
+/* ─── SECTION DIVIDER (engraved rule) ──────────────────────────────────── */
+.engraved-rule {
+  display: flex; align-items: center; gap: 16px;
+  margin: 80px auto;
+  max-width: 200px;
+  color: var(--copper, #c87a4a);
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+.engraved-rule::before,
+.engraved-rule::after {
+  content: ''; flex: 1; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--copper, #c87a4a), transparent);
+  opacity: 0.5;
+}
+.engraved-rule span { display: inline-block; }
+@keyframes rulePulse {
+  0%, 100% { opacity: 0.3; }
+  50%      { opacity: 0.7; }
+}
+.engraved-rule.is-pulsing::before,
+.engraved-rule.is-pulsing::after { animation: rulePulse 3s ease-in-out infinite; }
+
+/* ─── REDUCED MOTION OVERRIDE ──────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .foundry-curtain { display: none !important; }
+  .embers, .blueprint-grid { display: none !important; }
+  .hammer-strike::after { display: none; }
+  .glow-pulse, .glow-pulse-soft { animation: none; }
+  .tilt-host { transition: none !important; transform: none !important; }
+  [data-line-draw] path, [data-line-draw] line, [data-line-draw] circle,
+  [data-line-draw] rect, [data-line-draw] polygon, [data-line-draw] polyline,
+  [data-line-draw] ellipse { transition: none !important; stroke-dashoffset: 0 !important; }
+  .engraved-rule.is-pulsing::before, .engraved-rule.is-pulsing::after { animation: none; }
+}

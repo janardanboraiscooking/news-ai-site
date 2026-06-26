@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en" style="color-scheme: dark light;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Metallic Standard — Artificial Intelligence</title>
+  <meta name="description" content="Machine learning, neural networks, agentic systems. AI coverage from The Metallic Standard.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="design.css">
+  <link rel="stylesheet" href="animations.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8916809584235685" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <div class="bg-plate" aria-hidden="true"></div>
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
+  </div>
+
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+  <div class="masthead-tape" aria-hidden="true">
+    <div class="masthead-tape__inner">
+      <span class="dot">◆</span><span>Section · AI</span><span class="dot">◆</span><span>Models, agents, infrastructure</span><span class="dot">◆</span><span>GPT-5 hits 94% on MMLU-Pro</span><span class="dot">◆</span><span>Llama 4 downloaded 2.3M times</span><span class="dot">◆</span>
+      <span class="dot">◆</span><span>Section · AI</span><span class="dot">◆</span><span>Models, agents, infrastructure</span><span class="dot">◆</span><span>GPT-5 hits 94% on MMLU-Pro</span><span class="dot">◆</span><span>Llama 4 downloaded 2.3M times</span><span class="dot">◆</span>
+    </div>
+  </div>
+
+  <header class="masthead">
+    <div class="masthead__inner">
+      <div class="masthead__left">
+        <div class="nav-stamp">
+          <span class="nav-stamp__plate">Nº 042</span>
+          <span>Section · AI</span>
+        </div>
+      </div>
+      <a href="index.html" class="logo-block">
+        <div class="logo-block__mark">The Metallic <span class="ampersand">Standard</span></div>
+        <div class="logo-block__sub">Established · MMXXVI</div>
+      </a>
+      <div class="masthead__right">
+        <nav class="nav-meta" aria-label="Primary">
+          <a href="index.html" class="nav-link">Index</a>
+          <a href="tech.html" class="nav-link">Tech</a>
+          <a href="ai.html" class="nav-link" aria-current="page">AI</a>
+          <a href="policy.html" class="nav-link">Policy</a>
+          <a href="opinion.html" class="nav-link">Opinion</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+        <button class="theme-toggle" id="themeToggle" aria-label="Switch theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="#" class="subscribe-cta magnetic" id="subscribeBtn">
+          <span>Subscribe</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="top-banner">
+    <div class="ad-container ad-leaderboard" data-reveal="fade-up">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8916809584235685" data-ad-slot="5226798173" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </div>
+
+  <section class="page-hero">
+    <div class="page-hero__plate">Nº 03 · Section</div>
+    <div class="page-hero__inner">
+      <h1 class="page-hero__title" data-reveal="blur-in">Artificial<br><em class="italic-display" style="color:var(--copper);">Intelligence.</em></h1>
+      <div class="page-hero__sub" data-reveal="fade-up" data-delay="2">
+        <div class="page-hero__sub-line">Models · Agents · Infrastructure</div>
+        <p class="page-hero__deck">The story of the most consequential technology of our time, told with the long view. The labs, the leverage, the displacement, and the people caught in the middle.</p>
+      </div>
+    </div>
+  </section>
+
+  <header class="section-head" data-plate="Nº 04 · Latest" data-reveal="fade-up">
+    <h2 class="section-head__title">In the Section</h2>
+    <div class="section-head__sub">4 dispatches</div>
+  </header>
+
+  <div class="story-grid story-grid--3col" data-stagger>
+
+    <a href="ai-articles/ai-agents.html" class="story-card" data-stagger-child data-cursor="hover">
+      <div class="story-card__plate ripple-host">
+        <span class="story-card__plate-num">Nº 05</span>
+        <span class="story-card__plate-cat">AI Agents</span>
+        <div class="story-card__plate-corners"></div>
+        <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" style="color:var(--copper);">
+          <circle cx="100" cy="100" r="60" stroke-width="0.8" opacity="0.5"/>
+          <circle cx="100" cy="100" r="40" stroke-width="0.6" opacity="0.6"/>
+          <circle cx="100" cy="100" r="20" stroke-width="0.6" opacity="0.7"/>
+          <circle cx="100" cy="100" r="4" fill="currentColor" stroke="none"/>
+          <g opacity="0.4" stroke-dasharray="2 3"><circle cx="100" cy="100" r="80" stroke-width="0.5"/></g>
+        </svg>
+      </div>
+      <div class="story-card__body">
+        <div class="story-card__meta"><span>May 30</span><span class="dot">◆</span><span>6 min</span></div>
+        <h3 class="story-card__title">How AI Agents Are Quietly Taking Over Your Job</h3>
+        <p class="story-card__excerpt">A deep investigation into the 2026 agent revolution — 38% of mid-management already replaced.</p>
+        <span class="story-card__read"><span>Read</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </div>
+    </a>
+
+    <a href="ai-articles/article-gpt5.html" class="story-card" data-stagger-child data-cursor="hover">
+      <div class="story-card__plate ripple-host">
+        <span class="story-card__plate-num">Nº 06</span>
+        <span class="story-card__plate-cat">LLM</span>
+        <div class="story-card__plate-corners"></div>
+        <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" style="color:var(--copper);">
+          <g opacity="0.5">
+            <line x1="100" y1="30" x2="60" y2="80" stroke-width="0.5"/>
+            <line x1="100" y1="30" x2="140" y2="80" stroke-width="0.5"/>
+            <line x1="60" y1="80" x2="30" y2="130" stroke-width="0.5"/>
+            <line x1="60" y1="80" x2="90" y2="130" stroke-width="0.5"/>
+            <line x1="140" y1="80" x2="110" y2="130" stroke-width="0.5"/>
+            <line x1="140" y1="80" x2="170" y2="130" stroke-width="0.5"/>
+            <line x1="30" y1="130" x2="60" y2="170" stroke-width="0.5"/>
+            <line x1="90" y1="130" x2="60" y2="170" stroke-width="0.5"/>
+            <line x1="90" y1="130" x2="120" y2="170" stroke-width="0.5"/>
+            <line x1="110" y1="130" x2="120" y2="170" stroke-width="0.5"/>
+            <line x1="110" y1="130" x2="160" y2="170" stroke-width="0.5"/>
+            <line x1="170" y1="130" x2="160" y2="170" stroke-width="0.5"/>
+          </g>
+          <circle cx="100" cy="30" r="8" fill="currentColor" stroke="none"/>
+          <circle cx="60" cy="80" r="6" fill="currentColor" fill-opacity="0.6" stroke="none"/>
+          <circle cx="140" cy="80" r="6" fill="currentColor" fill-opacity="0.6" stroke="none"/>
+          <circle cx="30" cy="130" r="4" fill="currentColor" fill-opacity="0.5" stroke="none"/>
+          <circle cx="90" cy="130" r="4" fill="currentColor" fill-opacity="0.5" stroke="none"/>
+          <circle cx="110" cy="130" r="4" fill="currentColor" fill-opacity="0.5" stroke="none"/>
+          <circle cx="170" cy="130" r="4" fill="currentColor" fill-opacity="0.5" stroke="none"/>
+        </svg>
+      </div>
+      <div class="story-card__body">
+        <div class="story-card__meta"><span>May 20</span><span class="dot">◆</span><span>7 min</span></div>
+        <h3 class="story-card__title">GPT-5 and Claude 4: The Race to AGI</h3>
+        <p class="story-card__excerpt">Next-generation language models push the boundaries of reasoning and multimodal understanding.</p>
+        <span class="story-card__read"><span>Read</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </div>
+    </a>
+
+    <a href="ai-articles/article-autonomous.html" class="story-card" data-stagger-child data-cursor="hover">
+      <div class="story-card__plate ripple-host">
+        <span class="story-card__plate-num">Nº 07</span>
+        <span class="story-card__plate-cat">AI</span>
+        <div class="story-card__plate-corners"></div>
+        <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" style="color:var(--copper);">
+          <circle cx="100" cy="100" r="20" stroke-width="0.8" fill="currentColor" fill-opacity="0.05"/>
+          <circle cx="60" cy="100" r="10" stroke-width="0.6" fill="currentColor" fill-opacity="0.1"/>
+          <circle cx="140" cy="100" r="10" stroke-width="0.6" fill="currentColor" fill-opacity="0.1"/>
+          <circle cx="100" cy="60" r="10" stroke-width="0.6" fill="currentColor" fill-opacity="0.1"/>
+          <circle cx="100" cy="140" r="10" stroke-width="0.6" fill="currentColor" fill-opacity="0.1"/>
+          <line x1="60" y1="100" x2="100" y2="60" stroke-width="0.5" opacity="0.5"/>
+          <line x1="100" y1="60" x2="140" y2="100" stroke-width="0.5" opacity="0.5"/>
+          <line x1="140" y1="100" x2="100" y2="140" stroke-width="0.5" opacity="0.5"/>
+          <line x1="100" y1="140" x2="60" y2="100" stroke-width="0.5" opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="story-card__body">
+        <div class="story-card__meta"><span>May 28</span><span class="dot">◆</span><span>5 min</span></div>
+        <h3 class="story-card__title">The Rise of Autonomous Systems in 2026</h3>
+        <p class="story-card__excerpt">From self-healing networks to generative design, AI is reshaping every sector of technology.</p>
+        <span class="story-card__read"><span>Read</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </div>
+    </a>
+
+    <a href="ai-articles/article-ai-safety.html" class="story-card" data-stagger-child data-cursor="hover">
+      <div class="story-card__plate ripple-host">
+        <span class="story-card__plate-num">Nº 08</span>
+        <span class="story-card__plate-cat">Regulation</span>
+        <div class="story-card__plate-corners"></div>
+        <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" style="color:var(--copper);">
+          <path d="M100 30 L160 55 L160 110 C160 140 100 170 100 170 C100 170 40 140 40 110 L40 55 Z" stroke-width="1" fill="currentColor" fill-opacity="0.05"/>
+          <path d="M75 100 L92 117 L130 80" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="story-card__body">
+        <div class="story-card__meta"><span>May 18</span><span class="dot">◆</span><span>5 min</span></div>
+        <h3 class="story-card__title">Global AI Safety Framework Takes Shape</h3>
+        <p class="story-card__excerpt">Nations race to establish guardrails as AI capabilities outpace legislative processes.</p>
+        <span class="story-card__read"><span>Read</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </div>
+    </a>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="site-footer__main">
+      <div class="site-footer__brand">
+        <div class="site-footer__mark">The Metallic <span class="ampersand">Standard</span></div>
+        <div class="site-footer__tagline">Daily Intelligence · Est. 2026</div>
+        <p class="site-footer__desc">A daily brief on artificial intelligence, technology, and the policy shaping both. Sharp analysis from a small desk.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col__title">Sections</div>
+        <ul>
+          <li><a href="index.html" class="link-draw">Index</a></li>
+          <li><a href="tech.html" class="link-draw">Tech</a></li>
+          <li><a href="ai.html" class="link-draw">AI</a></li>
+          <li><a href="policy.html" class="link-draw">Policy</a></li>
+          <li><a href="opinion.html" class="link-draw">Opinion</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col__title">Newsroom</div>
+        <ul>
+          <li><a href="contact.html" class="link-draw">Send a tip</a></li>
+          <li><a href="contact.html" class="link-draw">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col__title">Legal</div>
+        <ul>
+          <li><a href="privacy.html" class="link-draw">Privacy</a></li>
+          <li><a href="terms.html" class="link-draw">Terms</a>
+          <a href="news/facebook-rolls-out-an-ai-companion-app-for-creators.html" class="story-card tilt-host" data-reveal="fade-up" data-delay="5" data-cursor="hover">
+            <div class="story-card__plate">
+              <span class="story-card__plate-cat">Tools</span>
+              <span class="story-card__plate-num">Nº 17</span>
+            </div>
+            <div class="story-card__body">
+              <h3 class="story-card__title">Facebook rolls out an AI companion app for creators</h3>
+              <div class="story-card__meta">
+                <span>TechCrunch</span>
+                <span class="dot">◆</span>
+                <span>Jun 24</span>
+                <span class="dot">◆</span>
+                <span>3 min</span>
+              </div>
+            </div>
+          </a>
+          <a href="news/anthropics-claude-tag-is-learning-your-company-one-slack-message-at-a-time.html" class="story-card tilt-host" data-reveal="fade-up" data-delay="6" data-cursor="hover">
+            <div class="story-card__plate">
+              <span class="story-card__plate-cat">Tools</span>
+              <span class="story-card__plate-num">Nº 18</span>
+            </div>
+            <div class="story-card__body">
+              <h3 class="story-card__title">Anthropic's Claude Tag learns your company one Slack message at a time</h3>
+              <div class="story-card__meta">
+                <span>TechCrunch</span>
+                <span class="dot">◆</span>
+                <span>Jun 23</span>
+                <span class="dot">◆</span>
+                <span>3 min</span>
+              </div>
+            </div>
+          </a>
+          <a href="news/new-research-shows-how-amie-our-medical-ai-could-help-manage-health-conditions.html" class="story-card tilt-host" data-reveal="fade-up" data-delay="1" data-cursor="hover">
+            <div class="story-card__plate">
+              <span class="story-card__plate-cat">Research</span>
+              <span class="story-card__plate-num">Nº 19</span>
+            </div>
+            <div class="story-card__body">
+              <h3 class="story-card__title">New Google research shows how AMIE medical AI could help manage health conditions</h3>
+              <div class="story-card__meta">
+                <span>Google AI Blog</span>
+                <span class="dot">◆</span>
+                <span>Jun 17</span>
+                <span class="dot">◆</span>
+                <span>3 min</span>
+              </div>
+            </div>
+          </a>
+          <a href="news/nvidia-says-its-ai-data-center-design-runs-hotter-to-use-a-lot-less-water.html" class="story-card tilt-host" data-reveal="fade-up" data-delay="2" data-cursor="hover">
+            <div class="story-card__plate">
+              <span class="story-card__plate-cat">Tools</span>
+              <span class="story-card__plate-num">Nº 20</span>
+            </div>
+            <div class="story-card__body">
+              <h3 class="story-card__title">Nvidia says its AI data center design runs hotter to nearly eliminate water use</h3>
+              <div class="story-card__meta">
+                <span>The Verge</span>
+                <span class="dot">◆</span>
+                <span>Jun 23</span>
+                <span class="dot">◆</span>
+                <span>3 min</span>
+              </div>
+            </div>
+          </a>
+          <a href="news/the-atlantic-created-a-searchable-database-of-the-music-used-to-train-ai.html" class="story-card tilt-host" data-reveal="fade-up" data-delay="3" data-cursor="hover">
+            <div class="story-card__plate">
+              <span class="story-card__plate-cat">Tools</span>
+              <span class="story-card__plate-num">Nº 21</span>
+            </div>
+            <div class="story-card__body">
+              <h3 class="story-card__title">The Atlantic created a searchable database of the music used to train AI</h3>
+              <div class="story-card__meta">
+                <span>The Verge</span>
+                <span class="dot">◆</span>
+                <span>Jun 21</span>
+                <span class="dot">◆</span>
+                <span>3 min</span>
+              </div>
+            </div>
+          </a>
+          <a href="news/how-to-turn-off-ai-in-your-google-docs.html" class="story-card tilt-host" data-reveal="fade-up" data-delay="4" data-cursor="hover">
+            <div class="story-card__plate">
+              <span class="story-card__plate-cat">Tools</span>
+              <span class="story-card__plate-num">Nº 22</span>
+            </div>
+            <div class="story-card__body">
+              <h3 class="story-card__title">How to turn off AI in your Google Docs</h3>
+              <div class="story-card__meta">
+                <span>TechCrunch</span>
+                <span class="dot">◆</span>
+                <span>Jun 18</span>
+                <span class="dot">◆</span>
+                <span>3 min</span>
+              </div>
+            </div>
+          </a>
+          <a href="news/only-16-percent-of-americans-think-ai-will-have-a-positive-impact-on-society-a-n.html" class="story-card tilt-host" data-reveal="fade-up" data-delay="5" data-cursor="hover">
+            <div class="story-card__plate">
+              <span class="story-card__plate-cat">Research</span>
+              <span class="story-card__plate-num">Nº 23</span>
+            </div>
+            <div class="story-card__body">
+              <h3 class="story-card__title">Only 16 percent of Americans think AI will have a positive impact on society, a new study shows</h3>
+              <div class="story-card__meta">
+                <span>TechCrunch</span>
+                <span class="dot">◆</span>
+                <span>Jun 17</span>
+                <span class="dot">◆</span>
+                <span>3 min</span>
+              </div>
+            </div>
+          </a>
+          <a href="news/pinterest-launches-an-experimental-ai-shopping-app-called-ask-pinterest.html" class="story-card tilt-host" data-reveal="fade-up" data-delay="6" data-cursor="hover">
+            <div class="story-card__plate">
+              <span class="story-card__plate-cat">Tools</span>
+              <span class="story-card__plate-num">Nº 24</span>
+            </div>
+            <div class="story-card__body">
+              <h3 class="story-card__title">Pinterest launches an experimental AI shopping app called âAsk Pinterestâ</h3>
+              <div class="story-card__meta">
+                <span>TechCrunch</span>
+                <span class="dot">◆</span>
+                <span>Jun 17</span>
+                <span class="dot">◆</span>
+                <span>3 min</span>
+              </div>
+            </div>
+          </a>
+          <a href="news/the-next-humanoid-robot-might-not-look-human-at-all.html" class="story-card tilt-host" data-reveal="fade-up" data-delay="1" data-cursor="hover">
+            <div class="story-card__plate">
+              <span class="story-card__plate-cat">Research</span>
+              <span class="story-card__plate-num">Nº 25</span>
+            </div>
+            <div class="story-card__body">
+              <h3 class="story-card__title">The next humanoid robot might not look human at all</h3>
+              <div class="story-card__meta">
+                <span>The Verge</span>
+                <span class="dot">◆</span>
+                <span>Jun 17</span>
+                <span class="dot">◆</span>
+                <span>3 min</span>
+              </div>
+            </div>
+          </a>
+          <a href="news/apple-2027-rumors-airpods-with-cameras-for-ai-and-the-second-folding-iphone.html" class="story-card tilt-host" data-reveal="fade-up" data-delay="2" data-cursor="hover">
+            <div class="story-card__plate">
+              <span class="story-card__plate-cat">Tools</span>
+              <span class="story-card__plate-num">Nº 26</span>
+            </div>
+            <div class="story-card__body">
+              <h3 class="story-card__title">Apple 2027 rumors: AirPods with cameras for AI and the second folding iPhone</h3>
+              <div class="story-card__meta">
+                <span>The Verge</span>
+                <span class="dot">◆</span>
+                <span>Jun 16</span>
+                <span class="dot">◆</span>
+                <span>3 min</span>
+              </div>
+            </div>
+          </a>
+          <a href="news/android-17-launches-with-new-multitasking-tools-as-google-expands-gemini-feature.html" class="story-card tilt-host" data-reveal="fade-up" data-delay="3" data-cursor="hover">
+            <div class="story-card__plate">
+              <span class="story-card__plate-cat">Tools</span>
+              <span class="story-card__plate-num">Nº 27</span>
+            </div>
+            <div class="story-card__body">
+              <h3 class="story-card__title">Android 17 launches with new multitasking tools as Google expands Gemini features</h3>
+              <div class="story-card__meta">
+                <span>TechCrunch</span>
+                <span class="dot">◆</span>
+                <span>Jun 16</span>
+                <span class="dot">◆</span>
+                <span>3 min</span>
+              </div>
+            </div>
+          </a>
+          <a href="news/metas-new-ai-mode-on-facebook-pulls-from-public-info-across-its-platforms.html" class="story-card tilt-host" data-reveal="fade-up" data-delay="4" data-cursor="hover">
+            <div class="story-card__plate">
+              <span class="story-card__plate-cat">Tools</span>
+              <span class="story-card__plate-num">Nº 28</span>
+            </div>
+            <div class="story-card__body">
+              <h3 class="story-card__title">Metaâs new âAI Modeâ on Facebook pulls from public info across its platforms</h3>
+              <div class="story-card__meta">
+                <span>TechCrunch</span>
+                <span class="dot">◆</span>
+                <span>Jun 16</span>
+                <span class="dot">◆</span>
+                <span>3 min</span>
+              </div>
+            </div>
+          </a>
+          <a href="news/my-yard-is-dying-so-i-made-an-app-for-that.html" class="story-card tilt-host" data-reveal="fade-up" data-delay="5" data-cursor="hover">
+            <div class="story-card__plate">
+              <span class="story-card__plate-cat">Tools</span>
+              <span class="story-card__plate-num">Nº 29</span>
+            </div>
+            <div class="story-card__body">
+              <h3 class="story-card__title">My yard is dying, so I made an app for that</h3>
+              <div class="story-card__meta">
+                <span>The Verge</span>
+                <span class="dot">◆</span>
+                <span>Jun 13</span>
+                <span class="dot">◆</span>
+                <span>3 min</span>
+              </div>
+            </div>
+          </a>
+          <a href="news/apples-new-ai-photo-editing-tools-mostly-work-for-better-and-worse.html" class="story-card tilt-host" data-reveal="fade-up" data-delay="6" data-cursor="hover">
+            <div class="story-card__plate">
+              <span class="story-card__plate-cat">Tools</span>
+              <span class="story-card__plate-num">Nº 30</span>
+            </div>
+            <div class="story-card__body">
+              <h3 class="story-card__title">Appleâs new AI photo editing tools mostly work, for better and worse</h3>
+              <div class="story-card__meta">
+                <span>The Verge</span>
+                <span class="dot">◆</span>
+                <span>Jun 13</span>
+                <span class="dot">◆</span>
+                <span>3 min</span>
+              </div>
+            </div>
+          </a>
+          <a href="news/cheaper-faster-and-culturally-aware-avataars-video-ai-is-built-for-indias-scale.html" class="story-card tilt-host" data-reveal="fade-up" data-delay="1" data-cursor="hover">
+            <div class="story-card__plate">
+              <span class="story-card__plate-cat">Tools</span>
+              <span class="story-card__plate-num">Nº 31</span>
+            </div>
+            <div class="story-card__body">
+              <h3 class="story-card__title">Cheaper, faster, and culturally aware, Avataarâs video AI is built for Indiaâs scale</h3>
+              <div class="story-card__meta">
+                <span>TechCrunch</span>
+                <span class="dot">◆</span>
+                <span>Jun 12</span>
+                <span class="dot">◆</span>
+                <span>3 min</span>
+              </div>
+            </div>
+          </a>
+          <a href="news/deezers-new-tool-can-identify-ai-music-from-spotify-apple-music-and-others.html" class="story-card tilt-host" data-reveal="fade-up" data-delay="2" data-cursor="hover">
+            <div class="story-card__plate">
+              <span class="story-card__plate-cat">Tools</span>
+              <span class="story-card__plate-num">Nº 32</span>
+            </div>
+            <div class="story-card__body">
+              <h3 class="story-card__title">Deezerâs new tool can identify AI music from Spotify, Apple Music, and others</h3>
+              <div class="story-card__meta">
+                <span>TechCrunch</span>
+                <span class="dot">◆</span>
+                <span>Jun 11</span>
+                <span class="dot">◆</span>
+                <span>3 min</span>
+              </div>
+            </div>
+          </a>
+          <a href="news/pools-new-app-turns-your-screenshots-into-something-useful.html" class="story-card tilt-host" data-reveal="fade-up" data-delay="3" data-cursor="hover">
+            <div class="story-card__plate">
+              <span class="story-card__plate-cat">Tools</span>
+              <span class="story-card__plate-num">Nº 33</span>
+            </div>
+            <div class="story-card__body">
+              <h3 class="story-card__title">Poolâs new app turns your screenshots into something useful</h3>
+              <div class="story-card__meta">
+                <span>TechCrunch</span>
+                <span class="dot">◆</span>
+                <span>Jun 11</span>
+                <span class="dot">◆</span>
+                <span>3 min</span>
+              </div>
+            </div>
+          </a>
+          <a href="news/anthropic-apologizes-for-invisible-claude-fable-guardrails.html" class="story-card tilt-host" data-reveal="fade-up" data-delay="4" data-cursor="hover">
+            <div class="story-card__plate">
+              <span class="story-card__plate-cat">Tools</span>
+              <span class="story-card__plate-num">Nº 34</span>
+            </div>
+            <div class="story-card__body">
+              <h3 class="story-card__title">Anthropic apologizes for invisible Claude Fable guardrails</h3>
+              <div class="story-card__meta">
+                <span>The Verge</span>
+                <span class="dot">◆</span>
+                <span>Jun 11</span>
+                <span class="dot">◆</span>
+                <span>3 min</span>
+              </div>
+            </div>
+          </a>
+          <a href="news/deezer-launches-an-ai-music-detector-for-other-streaming-services.html" class="story-card tilt-host" data-reveal="fade-up" data-delay="5" data-cursor="hover">
+            <div class="story-card__plate">
+              <span class="story-card__plate-cat">Tools</span>
+              <span class="story-card__plate-num">Nº 35</span>
+            </div>
+            <div class="story-card__body">
+              <h3 class="story-card__title">Deezer launches an AI music detector for other streaming services</h3>
+              <div class="story-card__meta">
+                <span>The Verge</span>
+                <span class="dot">◆</span>
+                <span>Jun 11</span>
+                <span class="dot">◆</span>
+                <span>3 min</span>
+              </div>
+            </div>
+          </a>
+          <a href="news/how-memory-tools-can-make-ai-models-worse.html" class="story-card tilt-host" data-reveal="fade-up" data-delay="6" data-cursor="hover">
+            <div class="story-card__plate">
+              <span class="story-card__plate-cat">Research</span>
+              <span class="story-card__plate-num">Nº 36</span>
+            </div>
+            <div class="story-card__body">
+              <h3 class="story-card__title">How memory tools can make AI models worse</h3>
+              <div class="story-card__meta">
+                <span>TechCrunch</span>
+                <span class="dot">◆</span>
+                <span>Jun 10</span>
+                <span class="dot">◆</span>
+                <span>3 min</span>
+              </div>
+            </div>
+          </a>
+          <a href="news/anthropics-fable-5-can-make-weirdly-fun-video-games-with-the-click-of-a-button.html" class="story-card tilt-host" data-reveal="fade-up" data-delay="1" data-cursor="hover">
+            <div class="story-card__plate">
+              <span class="story-card__plate-cat">Tools</span>
+              <span class="story-card__plate-num">Nº 37</span>
+            </div>
+            <div class="story-card__body">
+              <h3 class="story-card__title">Anthropicâs Fable 5 can make weirdly fun video games with the click of a button</h3>
+              <div class="story-card__meta">
+                <span>TechCrunch</span>
+                <span class="dot">◆</span>
+                <span>Jun 10</span>
+                <span class="dot">◆</span>
+                <span>3 min</span>
+              </div>
+            </div>
+          </a>
+          <a href="news/anthropics-claude-fable-5-is-a-version-of-mythos-the-public-can-access-today.html" class="story-card tilt-host" data-reveal="fade-up" data-delay="2" data-cursor="hover">
+            <div class="story-card__plate">
+              <span class="story-card__plate-cat">Models</span>
+              <span class="story-card__plate-num">Nº 38</span>
+            </div>
+            <div class="story-card__body">
+              <h3 class="story-card__title">Anthropicâs Claude Fable 5 is a version of Mythos the public can access today</h3>
+              <div class="story-card__meta">
+                <span>TechCrunch</span>
+                <span class="dot">◆</span>
+                <span>Jun 9</span>
+                <span class="dot">◆</span>
+                <span>3 min</span>
+              </div>
+            </div>
+          </a>
+          <a href="news/apples-long-awaited-ai-siri-overhaul-is-finally-here.html" class="story-card tilt-host" data-reveal="fade-up" data-delay="3" data-cursor="hover">
+            <div class="story-card__plate">
+              <span class="story-card__plate-cat">Tools</span>
+              <span class="story-card__plate-num">Nº 39</span>
+            </div>
+            <div class="story-card__body">
+              <h3 class="story-card__title">Appleâs long-awaited AI Siri overhaul is finally here</h3>
+              <div class="story-card__meta">
+                <span>TechCrunch</span>
+                <span class="dot">◆</span>
+                <span>Jun 8</span>
+                <span class="dot">◆</span>
+                <span>3 min</span>
+              </div>
+            </div>
+          </a>
+          <a href="news/wwdc-2026-everything-announced-on-siri-ai-ios-27-apple-intelligence-and-more.html" class="story-card tilt-host" data-reveal="fade-up" data-delay="4" data-cursor="hover">
+            <div class="story-card__plate">
+              <span class="story-card__plate-cat">Tools</span>
+              <span class="story-card__plate-num">Nº 40</span>
+            </div>
+            <div class="story-card__body">
+              <h3 class="story-card__title">WWDC 2026: Everything announced on Siri AI, iOS 27, Apple Intelligence and more</h3>
+              <div class="story-card__meta">
+                <span>TechCrunch</span>
+                <span class="dot">◆</span>
+                <span>Jun 8</span>
+                <span class="dot">◆</span>
+                <span>3 min</span>
+              </div>
+            </div>
+          </a>
+          <a href="news/here-comes-new-siri-again.html" class="story-card tilt-host" data-reveal="fade-up" data-delay="5" data-cursor="hover">
+            <div class="story-card__plate">
+              <span class="story-card__plate-cat">Tools</span>
+              <span class="story-card__plate-num">Nº 41</span>
+            </div>
+            <div class="story-card__body">
+              <h3 class="story-card__title">Here comes new Siri again</h3>
+              <div class="story-card__meta">
+                <span>The Verge</span>
+                <span class="dot">◆</span>
+                <span>Jun 6</span>
+                <span class="dot">◆</span>
+                <span>3 min</span>
+              </div>
+            </div>
+          </a>
+</li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__base">
+      <div class="site-footer__base-inner">
+        <span>© 2026 The Metallic Standard</span>
+        <span class="dot">◆</span>
+        <span>Volume I</span>
+        <span class="dot">◆</span>
+        <span>Set in Fraunces &amp; Manrope</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="ad-anchor" id="anchorAd">
+    <button class="close-btn" id="closeAnchor">Close</button>
+    <div class="ad-container ad-leaderboard">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8916809584235685" data-ad-slot="5226798173" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </div>
+
+  <script src="animations.js"></script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" style="color-scheme: dark light;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Metallic Standard — Contact</title>
+  <meta name="description" content="Send a tip, file a correction, or get in touch with the newsroom.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="design.css">
+  <link rel="stylesheet" href="animations.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8916809584235685" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <div class="bg-plate" aria-hidden="true"></div>
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
+  </div>
+
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+  <header class="masthead">
+    <div class="masthead__inner">
+      <div class="masthead__left">
+        <div class="nav-stamp">
+          <span class="nav-stamp__plate">Nº 042</span>
+          <span>Contact</span>
+        </div>
+      </div>
+      <a href="index.html" class="logo-block">
+        <div class="logo-block__mark">The Metallic <span class="ampersand">Standard</span></div>
+        <div class="logo-block__sub">Established · MMXXVI</div>
+      </a>
+      <div class="masthead__right">
+        <nav class="nav-meta" aria-label="Primary">
+          <a href="index.html" class="nav-link">Index</a>
+          <a href="tech.html" class="nav-link">Tech</a>
+          <a href="ai.html" class="nav-link">AI</a>
+          <a href="policy.html" class="nav-link">Policy</a>
+          <a href="opinion.html" class="nav-link">Opinion</a>
+          <a href="contact.html" class="nav-link" aria-current="page">Contact</a>
+        </nav>
+        <button class="theme-toggle" id="themeToggle" aria-label="Switch theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="#" class="subscribe-cta magnetic" id="subscribeBtn">
+          <span>Subscribe</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="top-banner">
+    <div class="ad-container ad-leaderboard" data-reveal="fade-up">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8916809584235685" data-ad-slot="5226798173" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </div>
+
+  <section class="page-hero">
+    <div class="page-hero__plate">Nº 06 · Contact</div>
+    <div class="page-hero__inner">
+      <h1 class="page-hero__title" data-reveal="blur-in">Get in<br><em class="italic-display" style="color:var(--copper);">Touch.</em></h1>
+      <div class="page-hero__sub" data-reveal="fade-up" data-delay="2">
+        <div class="page-hero__sub-line">Tips · Feedback · Corrections</div>
+        <p class="page-hero__deck">A small desk reads every message. For sensitive tips, use Signal (number in the directory). For corrections, link the article.</p>
+      </div>
+    </div>
+  </section>
+
+  <div id="form-success" class="form-block" data-reveal="fade-up" style="display:none;">
+    <div class="form-block__inner" style="text-align:center;">
+      <svg width="60" height="60" viewBox="0 0 60 60" fill="none" style="margin:0 auto 20px;color:var(--copper);">
+        <circle cx="30" cy="30" r="28" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.5"/>
+        <path d="M18 30 L26 38 L42 22" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <h2 style="font-family:var(--font-display);font-weight:500;font-variation-settings:'opsz' 144,'SOFT' 50,'WONK' 1;font-size:32px;letter-spacing:-0.02em;color:var(--text-on-paper);margin-bottom:12px;">Message received<span style="color:var(--copper);">.</span></h2>
+      <p style="font-size:14px;color:var(--text-2);line-height:1.6;max-width:42ch;margin:0 auto;">Thank you for writing. We read every message and will respond if a reply is warranted.</p>
+    </div>
+  </div>
+
+  <div id="form-error" class="form-block" data-reveal="fade-up" style="display:none;">
+    <div class="form-block__inner" style="text-align:center;border-color:rgba(160,64,48,0.4);">
+      <h2 style="font-family:var(--font-display);font-weight:500;font-size:32px;letter-spacing:-0.02em;color:var(--rust);margin-bottom:12px;">Something went wrong.</h2>
+      <p style="font-size:14px;color:var(--text-2);line-height:1.6;max-width:42ch;margin:0 auto;">Please try again or email us directly at <a href="mailto:tips@metallicstandard.com" style="color:var(--copper);border-bottom:1px solid var(--hairline-bright);">tips@metallicstandard.com</a></p>
+    </div>
+  </div>
+
+  <div class="form-block" id="contact-form-wrap" data-reveal="fade-up" data-delay="2">
+    <div class="form-block__inner">
+      <div class="form-block__title">Send a Message</div>
+      <p class="form-block__deck">The fastest way to reach the newsroom. For confidential material, please use Signal.</p>
+      <form id="contactForm" action="https://formspree.io/f/xpqnejry" method="POST">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <select id="subject" name="subject" required>
+            <option value="" disabled selected>Select a topic</option>
+            <option value="tip">News Tip</option>
+            <option value="feedback">Feedback</option>
+            <option value="correction">Correction Request</option>
+            <option value="advertising">Advertising Inquiry</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell us what's on your mind..." required></textarea>
+        </div>
+        <button type="submit" class="submit-btn magnetic" id="submitBtn">
+          <span>Send Message</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <section class="contact-info">
+    <div class="info-card ripple-host" data-cursor="hover">
+      <div class="info-card__num">Nº 01</div>
+      <h4 class="info-card__title">Tips &amp; Newsroom</h4>
+      <p class="info-card__text">For story leads, source material, and document drops.</p>
+      <a href="mailto:tips@metallicstandard.com" class="info-card__link">tips@metallicstandard.com →</a>
+    </div>
+    <div class="info-card ripple-host" data-cursor="hover">
+      <div class="info-card__num">Nº 02</div>
+      <h4 class="info-card__title">Corrections</h4>
+      <p class="info-card__text">Found a factual error? We publish corrections within 24 hours.</p>
+      <a href="mailto:corrections@metallicstandard.com" class="info-card__link">corrections@ →</a>
+    </div>
+    <div class="info-card ripple-host" data-cursor="hover">
+      <div class="info-card__num">Nº 03</div>
+      <h4 class="info-card__title">Press &amp; Partnerships</h4>
+      <p class="info-card__text">For press inquiries, syndication, and partnership opportunities.</p>
+      <a href="mailto:press@metallicstandard.com" class="info-card__link">press@ →</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="site-footer__main">
+      <div class="site-footer__brand">
+        <div class="site-footer__mark">The Metallic <span class="ampersand">Standard</span></div>
+        <div class="site-footer__tagline">Daily Intelligence · Est. 2026</div>
+        <p class="site-footer__desc">A daily brief on artificial intelligence, technology, and the policy shaping both. Sharp analysis from a small desk.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col__title">Sections</div>
+        <ul>
+          <li><a href="index.html" class="link-draw">Index</a></li>
+          <li><a href="tech.html" class="link-draw">Tech</a></li>
+          <li><a href="ai.html" class="link-draw">AI</a></li>
+          <li><a href="policy.html" class="link-draw">Policy</a></li>
+          <li><a href="opinion.html" class="link-draw">Opinion</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col__title">Newsroom</div>
+        <ul>
+          <li><a href="contact.html" class="link-draw">Send a tip</a></li>
+          <li><a href="contact.html" class="link-draw">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col__title">Legal</div>
+        <ul>
+          <li><a href="privacy.html" class="link-draw">Privacy</a></li>
+          <li><a href="terms.html" class="link-draw">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__base">
+      <div class="site-footer__base-inner">
+        <span>© 2026 The Metallic Standard</span>
+        <span class="dot">◆</span>
+        <span>Volume I</span>
+        <span class="dot">◆</span>
+        <span>Set in Fraunces &amp; Manrope</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="ad-anchor" id="anchorAd">
+    <button class="close-btn" id="closeAnchor">Close</button>
+    <div class="ad-container ad-leaderboard">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8916809584235685" data-ad-slot="5226798173" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('closeAnchor').addEventListener('click', function() {
+      document.getElementById('anchorAd').classList.add('closed');
+    });
+    (function() {
+      var form = document.getElementById('contactForm');
+      if (!form) return;
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var btn = document.getElementById('submitBtn');
+        var span = btn.querySelector('span');
+        var origText = span.textContent;
+        span.textContent = 'Sending...';
+        btn.disabled = true;
+        var data = new FormData(form);
+        fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+          .then(function(r) { return r.json(); })
+          .then(function(resp) {
+            if (resp.ok || resp.success) {
+              document.getElementById('contact-form-wrap').style.display = 'none';
+              document.getElementById('form-success').style.display = 'block';
+            } else { throw new Error('Form error'); }
+          })
+          .catch(function() {
+            document.getElementById('contact-form-wrap').style.display = 'none';
+            document.getElementById('form-error').style.display = 'block';
+          });
+      });
+    })();
+  </script>
+  <script src="animations.js"></script>
+</body>
+</html>
