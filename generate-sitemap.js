@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const BASE_URL = 'https://news-by-ai-theta.vercel.app';
+const BASE_URL = 'https://newslumen.vercel.app';
 const today = new Date().toISOString().split('T')[0];
 
 const urls = [];

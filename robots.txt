@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://news-by-ai-theta.vercel.app/sitemap.xml
+Sitemap: https://newslumen.vercel.app/sitemap.xml
