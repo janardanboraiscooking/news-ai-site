@@ -106,6 +106,7 @@ function genArticle(article, index) {
   <link rel="stylesheet" href="../design.css">
   <link rel="stylesheet" href="../animations.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${AD_CLIENT}" crossorigin="anonymous"></script>
+  <meta name="google-site-verification" content="09gYlZtmtmhkcQdKmCUz4ERuYbJiYhG_EcRQgYtuh6U">
 </head>
 <body>
   <div class="bg-plate" aria-hidden="true"></div>
