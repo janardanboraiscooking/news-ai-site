@@ -9,6 +9,14 @@ const articles = JSON.parse(fs.readFileSync(path.join(__dirname, 'articles.json'
 const outDir = path.join(__dirname, 'news');
 if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
 
+// Load Pexels images if available
+let images = {};
+const imagesPath = path.join(__dirname, 'images.json');
+if (fs.existsSync(imagesPath)) {
+  images = JSON.parse(fs.readFileSync(imagesPath, 'utf8'));
+  console.log(`Loaded ${Object.keys(images).length} Pexels images`);
+}
+
 const catMap = {
   'Research': 'ai', 'Models': 'ai', 'Open Source': 'ai', 'Tools': 'ai',
   'Industry': 'tech', 'Startups': 'tech',
@@ -79,6 +87,12 @@ function genArticle(article, index) {
     { id: 's4', label: '04 · Key Takeaways' },
   ];
 
+  const img = images[slug];
+  const heroImage = img ? `<div class="article-hero-image" data-reveal="fade-up" style="margin:0 auto 40px;max-width:1200px;padding:0 32px;">
+    <img src="${escapeHtml(img.url)}" alt="${escapeHtml(img.alt)}" style="width:100%;height:auto;max-height:400px;object-fit:cover;border-radius:4px;" loading="lazy">
+    <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-3);margin-top:8px;">Photo by <a href="${escapeHtml(img.photographer_url)}" target="_blank" rel="noopener" style="color:var(--copper);text-decoration:none;">${escapeHtml(img.photographer)}</a> / Pexels</div>
+  </div>` : '';
+
   return `<!DOCTYPE html>
 <html lang="en" style="color-scheme: dark light;">
 <head>
@@ -135,6 +149,8 @@ function genArticle(article, index) {
 
   <div class="top-banner"><div class="ad-container ad-leaderboard" data-reveal="fade-up"><ins class="adsbygoogle" style="display:block" data-ad-client="${AD_CLIENT}" data-ad-slot="${AD_SLOT}" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div></div>
 
+  <div style="max-width:728px;margin:0 auto 24px;" data-reveal="fade-up"><script async="async" data-cfasync="false" src="https://pl30085535.effectivecpmnetwork.com/f1ba05d1a430c440ab2bd9ad3c40ae53/invoke.js"></script><div id="container-f1ba05d1a430c440ab2bd9ad3c40ae53"></div></div>
+
   <article class="article">
     <div class="article__hero">
       <div class="article__hero-plate tilt-host" data-reveal="scale-in" data-line-draw>
@@ -162,6 +178,7 @@ function genArticle(article, index) {
 
     <div class="article-grid">
       <div class="article__body">
+        ${heroImage}
 
         <h2 id="s1" data-reveal="fade-right">Overview</h2>
         <p data-reveal="fade-up">${escapeHtml(overviewP1)}</p>
@@ -320,6 +337,7 @@ function genArticle(article, index) {
   </script>
   <script src="../animations.js"></script>
   <script src="../summarizer.js"></script>
+  <script src="https://pl30085536.effectivecpmnetwork.com/97/89/1c/97891c11c1acec8c45cf1c918915c1a3.js"></script>
 </body>
 </html>`;
 }
